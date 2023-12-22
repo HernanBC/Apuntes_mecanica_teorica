@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1703228058 "/home/hernan/Documentos/Apuntes_mecanica_teorica/main.tex" "main.pdf" "main" 1703228060
+["pdflatex"] 1703228618 "/home/hernan/Documentos/Apuntes_mecanica_teorica/main.tex" "main.pdf" "main" 1703228620
   "/etc/texmf/web2c/texmf.cnf" 1694141562 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/hernan/Documentos/Apuntes_mecanica_teorica/main.tex" 1703227996 1166 778deab295e2952b4872750f53cd0ee4 ""
+  "/home/hernan/Documentos/Apuntes_mecanica_teorica/main.tex" 1703228618 1166 778deab295e2952b4872750f53cd0ee4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvbc7t.tfm" 1136768653 2672 88159036c64e674fcd9515bc9c7052d4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
@@ -276,10 +276,10 @@
   "chapters/cap1.tex" 1703228043 6463 3ac5e3506c205f0f37cbf7cded6aa183 ""
   "images//strongthirdlaw.jpeg" 1703208679 19933 a1493d847854f9652e08f7c472951f24 ""
   "images//weakthirdlaw.jpeg" 1703208683 20380 0dc7f82790f75478d1cd64c02eb70736 ""
-  "main.aux" 1703228060 5069 ed15f3d4cd52d2741042414eaec8f9b7 "pdflatex"
-  "main.out" 1703228060 975 c997df3114056baa25674555537b9b07 "pdflatex"
-  "main.tex" 1703227996 1166 778deab295e2952b4872750f53cd0ee4 ""
-  "main.toc" 1703228060 515 b70c67b6399a3cfc1ccc24923f628ed9 "pdflatex"
+  "main.aux" 1703228620 5069 ed15f3d4cd52d2741042414eaec8f9b7 "pdflatex"
+  "main.out" 1703228620 975 c997df3114056baa25674555537b9b07 "pdflatex"
+  "main.tex" 1703228618 1166 778deab295e2952b4872750f53cd0ee4 ""
+  "main.toc" 1703228620 515 b70c67b6399a3cfc1ccc24923f628ed9 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

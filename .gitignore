@@ -1,0 +1,9 @@
+.aux
+.fls
+.fdb_latexmk
+.log
+.out
+.synctex.gz
+.toc
+NotesTeX.pdf
+NotesTeX.xdv

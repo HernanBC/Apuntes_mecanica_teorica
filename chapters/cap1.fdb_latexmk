@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1703389964 "/home/hernan/Documentos/Apuntes_mecanica_teorica/chapters/cap1.tex" "chapters/cap1.pdf" "cap1" 1703389965
+["pdflatex"] 1703403180 "/home/hernan/Documentos/Apuntes_mecanica_teorica/chapters/cap1.tex" "chapters/cap1.pdf" "cap1" 1703403181
   "/etc/texmf/web2c/texmf.cnf" 1694141562 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/hernan/Documentos/Apuntes_mecanica_teorica/chapters/cap1.tex" 1703389964 6552 e58a42ad51ff37d931231573139d3b6f ""
+  "/home/hernan/Documentos/Apuntes_mecanica_teorica/chapters/cap1.tex" 1703403178 6899 68920887b2e3224df72984132bd8cb76 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvbc7t.tfm" 1136768653 2672 88159036c64e674fcd9515bc9c7052d4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
@@ -258,12 +258,12 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1697060625 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1697060649 2798059 3dd19100514f887e268b3db3968bb238 ""
   "NotesTeXV3.sty" 1703208249 19514 574dd07d13f3350f65ca9466bdd7b319 ""
-  "chapters/cap1.aux" 1703389965 4861 0efba4bae414925f5ae625bb98aaaa16 "pdflatex"
-  "chapters/cap1.out" 1703389965 809 22c28c1c33f798349058d86f30c41049 "pdflatex"
-  "chapters/cap1.tex" 1703389964 6552 e58a42ad51ff37d931231573139d3b6f ""
+  "chapters/cap1.aux" 1703403181 5419 e6341fbcb2171c4181b337ab7e3dbd39 "pdflatex"
+  "chapters/cap1.out" 1703403181 809 22c28c1c33f798349058d86f30c41049 "pdflatex"
+  "chapters/cap1.tex" 1703403178 6899 68920887b2e3224df72984132bd8cb76 ""
   "images//strongthirdlaw.jpeg" 1703208679 19933 a1493d847854f9652e08f7c472951f24 ""
   "images//weakthirdlaw.jpeg" 1703208683 20380 0dc7f82790f75478d1cd64c02eb70736 ""
-  "main.tex" 1703389794 1382 a3a1681593c7472c3c8602df2d4d23e0 ""
+  "main.tex" 1703390400 1715 ba3e5bcdd1d2bf83b0164e42a5fb691b ""
   (generated)
   "chapters/cap1.aux"
   "chapters/cap1.log"

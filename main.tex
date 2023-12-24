@@ -22,6 +22,13 @@
 	\newpage
 	\pagestyle{fancynotes}
 
+
+
+	\part{Introducción al texto}
+	\label{part: intro}
+
+	\subfile{chapters/cap0.tex}
+
 	\part{Mecánica Newtoniana} % (fold)
 	\label{prt:Mecánica Newtoniana}
 
@@ -30,6 +37,18 @@
 	
 	% part Mecánica Newtoniana (end)
 
-	
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% bibliografía
+
+	% Se usó ese código para generar nota en el índice y que aparezcan todos documentos que forman el archivo .bib de forma automatica sin previa cita en el text
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\phantomsection
+
+	\addcontentsline{toc}{section}{Referencias}
+	\bibliographystyle{unsrtnat} %puede cambiarse, de ser necesario
+	\bibliography{biblio.bib}
+	\cite{*} %quitarlo cuando realizan las citas correspondientes
 
 \end{document}

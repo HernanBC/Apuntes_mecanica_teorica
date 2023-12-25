@@ -5,8 +5,10 @@
 .out
 .synctex.gz
 .toc
-NotesTeX.pdf
+.bbl
+.blg
 
+NotesTeX.pdf
 
 NotesTeX.xdv
 
@@ -19,3 +21,23 @@ main.synctex.gz
 main.toc
 main.bbl
 main.blg
+
+cap0.aux
+cap0.fls
+cap0.fdb_latexmk
+cap0.log
+cap0.out
+cap0.synctex.gz
+cap0.toc
+cap0.bbl
+cap0.blg
+
+cap1.aux
+cap1.fls
+cap1.fdb_latexmk
+cap1.log
+cap1.out
+cap1.synctex.gz
+cap1.toc
+cap1.bbl
+cap1.blg

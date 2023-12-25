@@ -29,3 +29,5 @@ La idea de estas notas es cubrir los temas vistos en el curso de Mecánica Teór
 
 %	Cap9: Colisiones y dispersión
 
+% Cap10: Medios Continuos
+

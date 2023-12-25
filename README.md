@@ -11,38 +11,21 @@ Para descargarlas no es necesario descargar todo el repositorio, solo necesitan 
 
 La idea de estas notas es cubrir los temas vistos en el curso de Mecánica Teórica de la UCR, por lo que se espera lograr completar el siguiente esquema de capítulos para las notas en un principio.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap1: Mecanica de Newton
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap1: Mecanica de Newton
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap2: Mecanica de Lagrange
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap2: Mecanica de Lagrange
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap3: Mecanica de Hamilton
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap3: Mecanica de Hamilton
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap4: Transformaciones Canónicas
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap4: Transformaciones Canónicas
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap5: Mecanica del cuerpo rígido
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap5: Mecanica del cuerpo rígido
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap6: Oscilaciones
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap6: Oscilaciones
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap7: Gravitación
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap7: Gravitación
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap8: Campos de fuerza centrales
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap8: Campos de fuerza centrales
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%	Cap9: Colisiones y dispersión
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cap9: Colisiones y dispersión
+

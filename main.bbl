@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -28,13 +28,27 @@ Herbert Goldstein, Charles Poole, and John Safko.
 \newblock Pearson, 3 edition, 2002.
 
 \bibitem[Resnick et~al.(2001)Resnick, Halliday, and Krane]{resnick1}
-Robet Resnick, David Halliday, and Kenneth~S Krane.
+Robert Resnick, David Halliday, and Kenneth~S Krane.
 \newblock \emph{Física Volumen 1}.
 \newblock Continental, 2001.
 
 \bibitem[Resnick et~al.(2002)Resnick, Halliday, and Krane]{resnick2}
-Robet Resnick, David Halliday, and Kenneth~S Krane.
+Robert Resnick, David Halliday, and Kenneth~S Krane.
 \newblock \emph{F{\'\i}sica, Volumen II}.
 \newblock Editorial Continental, 2002.
+
+\bibitem[Young and Freedman(2018)]{Young2018}
+Hugh Young and Roger Freedman.
+\newblock \emph{{Sears y Zemansky - F{\'{i}}sica Universitaria con F{\'{i}}sica
+  Moderna 1}}.
+\newblock Pearson Educaci{\'{o}}n, Ciudad de M{\'{e}}xico, 14th edition, 2018.
+\newblock ISBN 9786073244398.
+
+\bibitem[Young and Freedman(2013)]{Young2013a}
+Hugh Young and Roger Freedman.
+\newblock \emph{{Sears y Zemansky - F{\'{i}}sica Universitaria con F{\'{i}}sica
+  Moderna 2}}.
+\newblock Pearson Educaci{\'{o}}n, Ciudad de M{\'{e}}xico, 13th edition, 2013.
+\newblock ISBN 9786073221900.
 
 \end{thebibliography}

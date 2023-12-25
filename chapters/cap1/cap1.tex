@@ -13,12 +13,26 @@
 	\newpage
 	\section{Mecánica Newtoniana para una partícula}\label{sec: N.particula }
 
-	A continuación se expresará la mecánica de partículas de forma idealizada, donde no se presenta ningún tipo de fuerza disipativa en el sistema de interés.
-
+	A continuación se expresará la mecánica de partículas.
 
 	\subsection{Leyes de Newton}
+	
+	Comenzando con algunos conceptos claves para el desarrollo de las leyes de Newton:
+
+	\begin{definition}[\textbf{Fuerza}]
+		Fuerza es el nombre que se le da a la interacción entre un cuerpo y su entorno, la cual es capaz de afectar el estado del cuerpo. Las fuerzas son cantidades vectoriales, por lo que poseen magnitud y dirección; su magnitud es dada en unidades de newton $N$.
+	\end{definition}
+
+	\begin{definition}[\textbf{Momentum Lineal}]
+		Momentum lineal o cantidad de movimiento, ambos se refieren a una cantidad vectorial dada por la siguiente ecuación:
+		\begin{equation}
+			\vec{p} = m \vec{v}
+			\label{eq: momentuml}
+		\end{equation}
+	\end{definition}
 
 	Las leyes de Newton tal y como se expresarán a continuación son unicamente válidas para sistemas de referencias \textbf{inerciales}, es decir, sistemas de referencia que no poseen ningun tipo de aceleración.
+
 
 	\marginnote{Un estado de \textbf{equilibrio} se refiere a que el cuerpo o sistema de interés se encuentra movientodose con velocidad lineal constante (\textbf{equilibrio dinámico}) o se encuentra en reposo (\textbf{equilibrio estático}). \vspace{2cm}}
 
@@ -38,6 +52,12 @@
 		\begin{equation}
 			\sum \vec{F} = \frac{d \vec{p}}{dt} = \dot{\vec{p}}
 			\label{eq: NSecondlaw}
+		\end{equation}
+
+		Suponiendo que la masa es constante para el cuerpo de interés, la primera ley de Newton también se puede escribir de la forma:
+
+		\begin{equation}
+			\sum \vec{F} = m \vec{a}
 		\end{equation}
 	\end{definition}
 
@@ -60,8 +80,6 @@
 		\end{figure}
 	\end{marginfigure}
 
-
-
 	\begin{definition}[\textbf{Tercera Ley de Newton o Ley de Acción-Reacción}]
 		Considere dos cuerpos denotados como A y B que presentan algún tipo de interacción entre sí, se dice que:
 		Toda \textbf{acción} que realice el cuerpo A sobre el cuerpo B le corresponde una \textbf{reacción} que proveniente del cuerpo B. Estas \textbf{acciones} y \textbf{reacciones} corresponden a fuerzas internas del sistema (cuerpos A y B) debido a su interacción, dichas fuerzas poseen la misma magnitud y su dirección es contraria.
@@ -76,8 +94,9 @@
 			\item \textbf{Enunciado Fuerte: } Los vectores correspondientes a las fuerzas de \textbf{acción} y \textbf{reacción} se encuentran sobre una misma recta, es decir, sí se conocen las direcciones de las fuerzas de \textbf{acción} y \textbf{reacción} es posible trazar una recta (conocida como línea de acción) que una los vectores de fuerzas y sea paralela a estos.
 			\item \textbf{Enunciado Débil: } No ocurre lo anterior. Es imposible unir los vectores de las fuerzas de \textbf{acción} y \textbf{reacción} por medio de una recta que sea paralela a ambos vectores.
 		\end{itemize}
+
+		Además de lo anterior, es preciso destacar que la \textbf{Tercera Ley de Newton} \textcolor{red}{no es una ley general de la naturaleza} y se puede establecer que toda fuerza que dependa de velocidades no obedecerá esta ley.
 	\end{definition}
-	\newpage
 
 	\subsection{Trabajo y Energía}
 
@@ -114,11 +133,11 @@
 		& = \sum_{i=1}^{3} m \int_{A}^{B}  v_{i} d v_{i} = \left . \sum_{i=1}^{3} \frac{1}{2} m v_{i}^{2} \right|_{A} ^{B} = \sum_{i=1}^{3} \frac{1}{2} m v_{iB}^{2} - \sum_{i=1}^{3} \frac{1}{2} m v_{iA}^{2}
 	\end{align*}
 
-	\begin{definition}[\textbf{Energía Cinética}] Corresponde al trabajo necesario para comenzar a mover un cuerpo desde el reposo hasta la rapidez $\vec{v}$.
+	\begin{definition}[\textbf{Energía Cinética Traslacional}] Corresponde al trabajo necesario para comenzar a mover un cuerpo desde el reposo hasta la rapidez $\vec{v}$.
 
 		\begin{equation} 
 			T =  \frac{1}{2} m \sum_{i=1}^{3} v_{i}^{2}
-			\label{eq:kineticenergy}
+			\label{eq: Ttras}
 		\end{equation}
 	\end{definition}
 
@@ -165,23 +184,103 @@
 
 	\subsection{Análogo rotacional de las leyes de Newton}
 
-	\subsection{Teoremas de Conservación}
+	Ahora se presentarán algunos conceptos importantes y ecuaciones para una descripción sencilla de la mecánica de partículas en rotación. Nuevamente se comenzará por los conceptos básicos análogos a los usados en las leyes de Newton y posteriormente se darán las leyes análogas.
 
-	\begin{definition}[\textbf{Momentum Lineal}]
+	Primerio deduciendo una relación entre la velocidad lineal $\vec{v}$ y la velocidad angular $\vec{\omega}$:
+
+	Deducir la relación velocida Lineal - Angular
+
+	\begin{definition}[\textbf{Relación velocida Lineal - Angular}]
 		\begin{equation}
-			\vec{p} = m \vec{v}
-			\label{eq: momentuml}
+			\vec{v} = \vec{w} \times \vec{r}
+			\label{eq: vwrelation}
 		\end{equation}
 		
 	\end{definition}
-	
+
+	\begin{definition}[\textbf{Torque}]
+		\begin{equation}
+			\vec{N}_{\mathcal{O}} = \vec{r} \times \vec{F}
+			\label{eq: torque}
+		\end{equation}
+		
+	\end{definition}
 
 	\begin{definition}[\textbf{Momentum Angular}]
 		\begin{equation}
-			\vec{L} = \vec{r} \times \vec{p} = m\; \vec{r} \times \vec{v}
+			\vec{L}_{\mathcal{O}} = \vec{r} \times \vec{p} = m\; \vec{r} \times \vec{v} = m\; \vec{r} \times \left(\vec{\omega} \times \vec{r} \right) \textup{\textcolor{blue}{\mn{$\vec{A} \times \left(\vec{B} \times \vec{C}\right) = \vec{B} \left(\vec{A}\cdot\vec{B}\right) - \vec{C}\left(\vec{A} \cdot \vec{B}\right)$}}} = m \left[\vec{r}\;^{2} \vec{\omega} - \vec{r} \left(\vec{r} \cdot \vec{\omega}\right)\right]
 			\label{eq: momentumA}
 		\end{equation}
+
+		En la amplia gama de casos en que se trabaja con partículas, se podrá reconocer que el producto $\vec{r} \cdot \vec{\omega} = 0$ y los vectores $\vec{r}$ y $\vec{\omega}$ apuntan en una única dirección, por lo que el momentum angular tomará la siguiente forma:
+
+		\begin{equation}
+			L_{\mathcal{O}q} = m  r^{2} \omega_{q}
+		\end{equation}
+	\end{definition}
+
+	\marginnote{La \textbf{masa} \textit{inercial} y los \textbf{ momentos de inercia}  están intimamente relacionados, ambos son medidas de que tan difícil es mover un cuerpo de cierta forma.}
+
+	\begin{definition}[\textbf{Momentos de Inercia}]
+		\begin{equation}
+			I_{q}^{\mathcal{O}} = \sum_{i} m_{i} r^{2}_{i}
+			\label{eq: easyinercia}
+		\end{equation}
+	\end{definition}
+
+	\marginnote{El termino \textit{inercial} es para hacer una distinción entre la \textbf{masa inercial} (La masa dada por la aceleración de un cuerpo al estar bajo el efecto de una fuerza) y la \textbf{masa gravitacional} (La masa determinada por las fuerzas gravitacionales entre el cuerpo de interés y otros cuerpos), a pesar de que ambas cantidades \textbf{son iguales} por el princiopio de equivalencia. }
+
+	\begin{theorem}[\textbf{Teorema de Ejes paralelos}]
+		\begin{equation}
+			I_{{q}'}= I_{q}^{cm} + Md^{2}
+		\end{equation}
+
+		La demostración de este teorema tal y como se encuentra escrito aquí se le dejará al lector y se recomienda verlo como una simplificación del teorema de ejes paralelos real que se desarrollará más adelante.
+	\end{theorem}
+
+	\begin{definition}[\textbf{Segunda Ley de Newton análoga rotacional}]
+		\begin{equation}
+			\sum \vec{N} = \frac{d L}{dt} = \dot{L}
+			\label{eq: NSecondlawrot}
+		\end{equation}
+
+		Manteniendo la inercia constante, la ecuación se escribe de la forma:
+		\begin{equation}
+			\sum N_{q} = I_{q} \alpha_{q}
+		\end{equation}
+		Donde el subíndice denota el eje respecto al cual se está realizando la suma de torques.
+
 		
 	\end{definition}
+
+	\begin{definition}[\textbf{Energía Cinética Rotacional}]
+		\begin{equation}
+			T_{rot} = \frac{1}{2}I_{q}\omega_{q}^{2}
+			\label{eq: Trot}
+		\end{equation}
+	\end{definition}
+
+	\subsection{Teoremas de Conservación}
+
+	\begin{theorem}[\textbf{Conservación de Momentum Lineal}]
+		
+	\end{theorem}
+
+	\begin{theorem}[\textbf{Conservación de Momentum de Angular}]
+		
+	\end{theorem}
+
+	\begin{theorem}[\textbf{Conservación de la Energía}]
+		
+	\end{theorem}
+
+	\subsection{Problemas resueltos}
+
+	\section{Sistemas de partículas}
+	\label{sec: sisparticulas}
+	
+	\section{Sistemas no inerciales}
+	\label{sec: noinerciales}
+
 
 \end{document}

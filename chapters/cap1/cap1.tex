@@ -171,7 +171,6 @@
 				\vdots 
 				\end{matrix} \right .
 		\end{equation}
-		
 	\end{definition}
 
 	\begin{theorem}[\textbf{Trabajo - Energía Potencial}]
@@ -419,13 +418,67 @@
 		\end{equation}
 	\end{theorem}
 
+	\newpage
+	\subsection{Complementos de la conservación de la energía}
+
+	\begin{definition}[\textbf{Condiciones de estabilidad}]
+		
+		Al conservarse la energía en un sistema, es posible encontrarse con que la partícula de interés se encuentra en un punto de equilibrio de algún tipo (Estables u Inestables), alrededor de estos puntos es posible obtener mucha información acerca del comportamiento del sistema. Las siguientes son las condiciones para determinar que es un punto de equilibrio y clasificarlo.
+
+		\begin{itemize}
+			\item \textbf{Pundo de equilibrio: } Se define como un punto en algun potencial que cumple con: \\ 
+				\begin{equation}
+				\left .  \vec{\nabla }V \right|_{\vec{r} \: = \: \vec{r}_{eq}} = 0
+				\end{equation}
+			\begin{itemize}
+				\item Punto de Equilibrio \textcolor{red}{Estable}: De colocar una partícula en reposo en este punto y sin la aparición de fuerzas a su alrededor, la partícula permanecerá en equilibrio en dicho punto por siempre. Ahora, si esta es colocada en reposo en los alrededores de este punto o desde el punto de equilibrio se le ejerce una fuerza que la obligue a moverse, la partícula comenzará un movimiento en dirección a este punto y se moverá perpetuamente a su alrededor siempre que $E =$ constante. La forma de determinar los puntos estables: \\ 
+				\begin{equation}
+					\left .  \vec{\nabla }^{2}V \right|_{\vec{r} \: = \: \vec{r}_{eq}} > 0
+					\label{eq: puntoestable}
+				\end{equation}
+				\item Punto de Equilibrio \textcolor{red}{Inestable}: De forma similar al anterior, si se coloca una partícula en reposo en este punto y sin la aparición de fuerzas a su alrededor, la partícula permanecerá en equilibrio en dicho punto por siempre. No obstante, de aparecer algún tipo de fuerza o colocarla en los alrededores del punto de equilibrio inestable, la partícula se encontrará en un movimiento unicamente limitado por la cantidad de energía del sistema y es posible que nunca vuelva a pasar por dicho punto. La forma de encontrar los puntos inestables: \\  
+				\begin{equation}
+					\left .  \vec{\nabla }^{2}V \right|_{\vec{r} \: = \: \vec{r}_{eq}} < 0
+					\label{eq: puntoinestable}
+				\end{equation}
+				\item Punto \textcolor{red}{No concluyente}:  				
+				\begin{equation}
+					\left .  \vec{\nabla }^{2}V \right|_{\vec{r} \: = \: \vec{r}_{eq}} = 0
+					\label{eq: puntonoconcluyente}
+				\end{equation}
+				\\Es necesario comprobar derivadas de orden superior bajo los mismos criterios para determinar estabilidad u inestabilidad de la posición de equilibrio. De obtenerse  $\left .  \vec{\nabla }^{3}V \right|_{\vec{r} \: = \: \vec{r}_{eq}} = 0$, es necesario continar con orden 4 en la derivación, comprobar criterios y, de ser necesario, repetir los pasos en derivaciones superiores.
+			\end{itemize}
+		\end{itemize}
+	\end{definition}
+
+	A continuación se muestra un ejemplo de como se aplican estos conceptos en un caso unidimensional.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=15cm]{puntosequilibrio.pdf}
+		\caption{Ejemplo en una dimensión de las condiciones de estabilidad. \\ La línea azul corresponde a la energía potencial que siente la partícula en cada punto. Se colocan un total de 5 energías totales para el sistema cada una determinada por un color para mayor facilidad. Junto a esto, cada intersección que tienen las rectas de energía con la curva de potencial posee un punto y también su respectiva ubicación en el eje X acorde al color de la energía total.}
+		\label{fig: puntosequilibrio}
+	\end{figure}
+
+	Al observar la \Figref{fig: puntosequilibrio}, se determina lo siguente:
+
+	\begin{itemize}
+		\item $x = x_{0}$ corresponde a un punto de equilibrio estable.
+		\item Si se coloca una partícula en $x = x_{0}$ en energía \textcolor{green}{$E_{1}$} , esta permancerá en reposo.
+		\item Para la energía \textcolor{violet}{$E_{2}$} , la partícula se moverá de forma periódica en $x_{a} < x < x_{b}$.
+		\item Para la energía \textcolor{red}{$E_{3}$}, la partícula se moverá de forma periódica en $x_{c} < x < x_{d}$ ó $x_{e} < x < x_{f}$. Esto es excluyente cabe destacar, la partícula se movera en uno o en el otro foso.
+		\item Hay un punto de equilibrio inestable entre los puntos $x_{d}$ y $x_{e}$, al igual que entre $x = 0$ y $x_{g}$.
+		\item Para la energía \textcolor{orange}{$E_{4}$}, la partícula se moverá de forma periódica en $x_{g} < x < +\infty $. La partícula va a $+\infty$, vuelve a $x_{g}$ y regresa a $+\infty$, completando un ciclo.
+		\item Para la energía \textcolor{cyan}{$E_{5}$}, el movimiento no está limitado por la energía potencial que siente la partícula. Esta se puede mover libremente pero su velocidad va a depender de la posición en la que se encuentre.
+	\end{itemize}
 
 
 	\subsection{Problemas resueltos}
 
+	\includepdf[pages={27-53},templatesize = {8 in}{8.5 in} ]{AMeca.pdf}
+	
+
 	\section{Sistemas de partículas}
 	\label{sec: sisparticulas}
-
 
 
 

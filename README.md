@@ -31,3 +31,6 @@ La idea de estas notas es cubrir los temas vistos en el curso de Mecánica Teór
 
 % Cap10: Medios Continuos
 
+28-12-2023
+
+Se completa lo que sería la primera sección de mecánica newtoniana.

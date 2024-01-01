@@ -8,7 +8,7 @@
 	\section{Vectores}\label{sec:vectores}
 
 
-	Esto ya deberían saberlo y probablemente se actualice de último $: \left . \right)$
+	Esto ya deberían saberlo y probablemente se actualice de último $: \left . \!  \right)$
 
 	\newpage
 	\section{Mecánica Newtoniana para una partícula}\label{sec: N.particula }
@@ -480,14 +480,15 @@
 	\section{Sistemas de partículas}
 	\label{sec: sisparticulas}
 
+	\subsection{Suposiciones iniciales}
 
-    Para trabajar con sistemas de partículas es necesario realizar ciertas suposiciones respecto a las fuerzas internas al sistema de partículas.
+    Para trabajar con sistemas de partículas $N$ es necesario realizar ciertas suposiciones respecto a las fuerzas internas al sistema de partículas.
 
     \begin{itemize}
         \item Para dos partículas $\alpha$ y $\beta$ se cumple: $\vec{f}_{\alpha \beta} = - \vec{f}_{\beta \alpha}$.
         \item Los vectores fuerza están sobre la línea que une a ambas partículas.
     \end{itemize}
-    Estas dos suposiciones se pueden resumir al aceptar trabajar con el \textbf{Enunciado Fuerte de la Tercera Ley de Newton}  (\Figref{fig: Nthirdstrong}). De acuerdo a esto, se procederá a construir las expresiones para sistemas de partículas para los conceptos conocidos en la sección anterior.
+    Estas dos suposiciones se pueden resumir al aceptar trabajar con el \textbf{Enunciado Fuerte de la Tercera Ley de Newton}  (\Figref{fig: Nthirdstrong}). De acuerdo a esto, se procederá a construir las expresiones para sistemas de partículas para los conceptos conocidos en la sección anterior y a introducir algunos conceptos nuevos.
 
 
     \begin{marginfigure}
@@ -503,15 +504,152 @@
         Corresponde a un punto del espacio en que se encuentra el sistema de partículas (discreto o continuo) en el cual es posible colapsar toda la masa del sistema, de modo que una fuerza arbitrária que interactue con alguna partícula del sistema se podrá transportar a dicho punto para conocer la mecánica del sistema (\Figref{fig: centrodemasa}). El centro de masa se define a partir de un promedio ponderado de toda la masa del sistema visto a continuación:
 
         \begin{align}
-            \vec{r}_{CM} = \frac{1}{M} \sum_{\alpha =1}^{N} m_{\alpha} \vec{r}_{\alpha} \; \; \rightarrow  & \; \; \vec{r}_{CM} = \frac{1}{M} \int_{M} \vec{r} dm \\ 
+            \vec{R} = \frac{1}{M} \sum_{\alpha =1}^{N} m_{\alpha} \vec{r}_{\alpha} \; \; \rightarrow  & \; \; \vec{R} = \frac{1}{M} \int_{M} \vec{r} dm \\ 
             M = \sum_{\alpha = 1}^{N} m_{\alpha} \; \; \rightarrow  & \; \; M =  \int_{M}  \rho dV
         \end{align}
         
     \end{definition}
 
-    \begin{definition}[\textbf{Momentum Lineal del Sistema}]
-        gggg
+	\subsection{Definición de la mecánica de sistemas de partículas}
+
+	Para definir la expresión del momentum lineal de un sistema de partículas hay que construirla a partir del conocimiento de la sección anterior. A partir de esto, se definen las siguientes cantidades para la partícula $\alpha$ del sistema:
+
+	\begin{itemize}
+		\item Fuerza neta externa al sistema sobre $\alpha$: $\vec{F}_{\alpha}^{e}$ 
+		\item Fuerza neta interna al sistema sobre $\alpha$: $\vec{f}_{\alpha}= \sum_{\left .\begin{matrix} \beta = 1\\ \alpha \neq \beta \end{matrix}\right .}^{N}\vec{f}_{\alpha \beta}$ 
+	\end{itemize}
+
+		Entonces la fuerza neta que percibe la partícula $\alpha$ es:
+		\begin{equation*}
+			\vec{F}_{\alpha} = \vec{F}_{\alpha}^{e} + \vec{f}_{\alpha}
+		\end{equation*}
+		De acuerdo a la Segunda Ley de Newton \Eqref{eq: NSecondlaw}:
+
+		\begin{align*}
+			& \dot{\vec{p}}_{\alpha} = \vec{F}_{\alpha} = m_{\alpha}\ddot{\vec{r}}_{\alpha} \\ 
+			\Rightarrow \; & m_{\alpha}\ddot{\vec{r}}_{\alpha} = \vec{F}_{\alpha}^{e} + \vec{f}_{\alpha}
+		\end{align*}
+
+		Hasta este momento se ha estado trabajando unicamente con la partícula $\alpha$, pero si ahora sumamos la expresión anterior para todas las partículas, se obtiene:
+
+		\begin{align*}
+			\Rightarrow \; \sum_{\alpha  = 1}^{N} \left[m_{\alpha} \vec{r}_{\alpha}\right] & = \sum_{\alpha = 1}^{N} \vec{F}_{\alpha}^{e} + \sum_{\alpha = 1}^{N} \vec{f}_{\alpha} \\ 
+			& = \sum_{\alpha = 1}^{N} \vec{F}_{\alpha}^{e} + \sum_{\alpha = 1}^{N} \sum_{\left .\begin{matrix} \beta = 1\\ \alpha \neq \beta \end{matrix}\right .}^{N}\vec{f}_{\alpha \beta} \\ 
+			& =  \sum_{\alpha = 1}^{N} \vec{F}_{\alpha}^{e} + \sum_{\left .\begin{matrix} \alpha \: , \: \beta = 1\\ \alpha \neq \beta \end{matrix}\right .}^{N}\vec{f}_{\alpha \beta} \\ 
+			\Rightarrow \underbrace{\sum_{\alpha  = 1}^{N} \frac{d^{2}}{dt^{2}} \left[m_{\alpha} \vec{r}_{\alpha}\right]}_{M \vec{r}_{CM}} & = \underbrace{ \sum_{\alpha = 1}^{N} \vec{F}_{\alpha}^{e}}_{\vec{F}} \; \; + \cancelto{0}{\sum_{\left . \begin{matrix} \alpha \: , \: \beta = 1\\ \alpha \neq \beta \end{matrix} \right .}^{N}\vec{f}_{\alpha \beta}}
+		\end{align*} 
+
+		De esta última expresión se obtiene \mn{El término \begin{equation*} \sum_{\left . \begin{matrix} \alpha \: , \: \beta = 1\\ \alpha \neq \beta \end{matrix} \right .}^{N}\vec{f}_{\alpha \beta} \end{equation*} \\ se hace cero porque se tiene:  \begin{equation*} \sum_{\alpha < \beta = 1}^{N} \vec{f}_{\alpha \beta} + \vec{f}_{\beta \alpha}\end{equation*} y es evidente que estas son fuerzas contrarias de igual magnitud debido a la \textbf{Tercera Ley de Newton}, por lo que el resultado de su suma es cero.}
+
+		\begin{align*}
+			\vec{F} = \dot{\vec{P}} \; \; \; \; \; \; &y \; \; \; \; \; \; \vec{P} = \sum_{\alpha = 1}^{N} m_{\alpha} \dot{\vec{r}}_{\alpha} = M\dot{\vec{R}}
+		\end{align*}
+
+    \begin{definition}[\textbf{Momentum Lineal y Segunda Ley de Newton para un Sistema}] 
+		La expresión para el momentum lineal de un sistema de partículas:
+		\begin{equation}
+			\vec{P} = M\dot{\vec{R}}
+			\label{eq: sismomentuml}
+		\end{equation}
+
+		y la expresión de la Segunda Ley de Newton para el caso de un sistema de partículas en el caso traslacional:
+
+		\begin{equation}
+			\vec{F} = \dot{\vec{P}} = M \ddot{\vec{R}}
+			\label{eq: sisNSecondlaw}
+		\end{equation}
     \end{definition}
+
+	\newpage
+
+	Ahora se resolverá un procedimiento similar para hallar una expresión para el momentum angular de un sistema de partículas respecto a un punto $\mathcal{O}$:
+
+	El momentum angular de una partícula $\alpha$ desde el punto $\mathcal{O}$ (Ver \Figref{fig: sismangular1}) es: 
+
+	\begin{equation*}
+		\vec{L}_{\alpha}^{\mathcal{O}} = \vec{r}_{\alpha} \times \vec{p}_{\alpha}
+	\end{equation*}
+
+	\begin{marginfigure}
+		\begin{figure}[H]
+			\includegraphics[width=7cm]{sismangular1.pdf}
+			\caption{Posición de la partícula $\alpha$ y el centro de masa de un sistema respecto a $\mathcal{O}$}
+			\label{fig: sismangular1}
+		\end{figure}
+	\end{marginfigure}
+
+	Si se realiza la suma de todos lo momentums angulares individuales, esto da a como resultado el momentum angular del sistema:
+
+	\begin{align*}
+		\vec{L}^{\mathcal{O}} &= \sum_{\alpha = 1}^{N} \vec{r}_{\alpha} \times \vec{p}_{\alpha} \\ 
+							& = \sum_{\alpha = 1}^{N} \vec{r}_{\alpha} \times \left(m_{\alpha} \vec{v}_{\alpha} \right) \\ 
+							& = \sum_{\alpha = 1}^{N} \left(\vec{R} + {\vec{r}}\,'_{\alpha} \right) \times \left[m_{\alpha} \left(\dot{\vec{R}} + {\dot{\vec{r}}}\,'_{\alpha} \right) \right] \\ 
+							& = \sum_{\alpha =1}^{N} m_{\alpha} \left({\vec{r}}\,'_{\alpha} \times {\dot{\vec{r}}}\,'_{\alpha} + {\vec{r}}\,'_{\alpha} \times \dot{\vec{R}} + \vec{R} \times {\dot{\vec{r}}}\,'_{\alpha} + \vec{R} \times \dot{\vec{R}} \right) \\ 
+							& =  \sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \times {\dot{\vec{r}}}\,'_{\alpha} + \textcolor{blue}{\sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \times \dot{\vec{R}} + \sum_{\alpha =1}^{N} m_{\alpha} \vec{R} \times {\dot{\vec{r}}}\,'_{\alpha}} + \sum_{\alpha =1}^{N} m_{\alpha}  \vec{R} \times \dot{\vec{R}}
+	\end{align*}
+
+
+	\begin{marginfigure}
+		\begin{figure}[H]
+			\includegraphics[width=7cm]{sismangular2.pdf}
+			\caption{Interacción y posiciones de las partículas $\alpha$ y $\beta$ de un sistema respecto a $\mathcal{O}$ }
+			\label{fig: sismangular2}
+		\end{figure}
+	\end{marginfigure}
+
+	Trabajando por un momento con los terminos en azul:
+
+	\begin{align*}
+		& \sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \times \dot{\vec{R}} + \sum_{\alpha =1}^{N} m_{\alpha} \vec{R} \times {\dot{\vec{r}}}\,'_{\alpha} \\ 
+		& = \left( \sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \right) \times \dot{\vec{R}} + \vec{R} \times \frac{d}{dt} \left( \sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \right) \\ 
+		& = \left( \sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \right) \times \left( \dot{\vec{R}}  - \vec{R}\right) \\ 
+		& = \left[ \sum_{\alpha =1}^{N} m_{\alpha} \left(\vec{r}_{\alpha} - \vec{R} \right) \right] \times \left( \dot{\vec{R}}  - \vec{R}\right) \\ 
+		& = \left[ \sum_{\alpha =1}^{N} m_{\alpha} \vec{r}_{\alpha} -\left( \sum_{\alpha =1}^{N} m_{\alpha} \right) \vec{R} \right] \times \left( \dot{\vec{R}}  - \vec{R}\right) \\ 
+		& = \cancelto{0}{\left[M\vec{R}-M\vec{R}\right]} \times \left( \dot{\vec{R}}  - \vec{R}\right) \\ 
+		& = 0
+	\end{align*}
+
+	Quedando claro que ambos terminos en azul son cero por como se definición del centro de masa\mn{La posición del centro de masa respecto al centro de masa siempre será cero.}, se continuará con la expresión trasanterior:
+
+	\begin{align*}
+		\vec{L}^{\mathcal{O}} &= \sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \times {\dot{\vec{r}}}\,'_{\alpha} + \cancelto{0}{\sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \times \dot{\vec{R}} + \sum_{\alpha =1}^{N} m_{\alpha} \vec{R} \times {\dot{\vec{r}}}\,'_{\alpha}} + \sum_{\alpha =1}^{N} m_{\alpha}  \vec{R} \times \dot{\vec{R}} \\ 
+		& = \sum_{\alpha =1}^{N} m_{\alpha} {\vec{r}}\,'_{\alpha} \times {\dot{\vec{r}}}\,'_{\alpha} + \sum_{\alpha =1}^{N} m_{\alpha}  \vec{R} \times \dot{\vec{R}} \\ 
+		& = \underbrace{\sum_{\alpha =1}^{N} {\vec{r}}\,'_{\alpha} \times {\dot{\vec{p}}}\,'_{\alpha}}_{\textup{Momentum Angular alrededor del CM}} + \underbrace{M \vec{R} \times \dot{\vec{R}}}_{\textup{Momentum Angular del CM alrededor a $\mathcal{O}$}}
+	\end{align*}
+
+	Ahora, buscando la expresión para la derivada respecto al tiempo del momentum angular del sistema. Para esto hay que comenzar de forma similar, analizar desde una unica partícula puntual que forme parte del sistema de partículas:
+
+	\begin{equation*}
+		\dot{\vec{L}}_{\alpha}^{\mathcal{O}} = \vec{r}_{\alpha} \times \dot{\vec{p}}_{\alpha} = \vec{r}_{\alpha} \times \left(\vec{F}_{\alpha}^{e} + \sum_{\left . \begin{matrix} \beta = 1\\ \alpha \neq \beta \end{matrix} \right .}^{N} \vec{f}_{\alpha \beta}\right)
+	\end{equation*}
+
+	Sumando para todas las partículas \mn{Aquí se encuentra una situación similar a la que se tuvo con el momentum lineal, el termino que se canceló, es cero por lo siguiente: \\ La expresión:  \begin{equation*} \sum_{\left .\begin{matrix} \alpha\, , \, \beta = 1\\ \alpha \neq \beta \end{matrix}\right .}^{N} \vec{r}_{\alpha} \times \vec{f}_{\alpha \beta} \end{equation*} es posible reescribirla como: \begin{equation*} \sum_{\alpha < \beta =1}^{N} \left( \vec{r}_{\alpha} \times \vec{f}_{\alpha \beta} + \vec{r}_{\beta} \times \vec{f}_{\beta \alpha} \right) \end{equation*} y aquí tomando que se cumple el \textbf{Enunciado Fuerte} de la Tercera Ley de Newton \Eqref{eq: NThirdlaw} y la siguiente definición (Ver \Figref{fig: sismangular2}): \begin{equation*} \vec{r}_{\alpha \beta} = \vec{r}_{\alpha} -\vec{r}_{\beta} \end{equation*} La expresión de interés se convierte en: \begin{align*} &\sum_{\alpha < \beta =1}^{N} \left( \vec{r}_{\alpha} \times \vec{f}_{\alpha \beta} - \vec{r}_{\beta} \times \vec{f}_{\alpha \beta} \right) \\ & = \sum_{\alpha < \beta =1}^{N} \left( \vec{r}_{\alpha}  - \vec{r}_{\beta}  \right) \times \vec{f}_{\alpha \beta} \\ & = \sum_{\alpha < \beta =1}^{N}  \underbrace{\vec{r}_{\alpha \beta} \times \vec{f}_{\alpha \beta}}_{\vec{r}_{\alpha \beta} \parallel \vec{f}_{\alpha \beta}}\\ & = 0 \end{align*}}:
+
+	\begin{align*}
+		\dot{\vec{L}}_{\mathcal{O}} = \sum_{\alpha = 1}^{N} \vec{r}_{\alpha} \times \vec{F}_{\alpha}^{e} + \cancelto{0}{\sum_{\left .\begin{matrix} \alpha\, , \, \beta = 1\\ \alpha \neq \beta \end{matrix}\right .}^{N} \vec{r}_{\alpha} \times \vec{f}_{\alpha \beta}}
+	\end{align*}
+
+	De esta última expresión se obtiene:
+
+	\begin{align*}
+		& \dot{\vec{L}}_{\mathcal{O}} = \sum_{\alpha = 1}^{N} \vec{r}_{\alpha} \times \vec{F}_{\alpha}^{e} = \sum_{\alpha=1}^{N} \vec{N}_{\alpha} ^{e} \\ 
+		\Rightarrow \; & \dot{\vec{L}}_{\mathcal{O}} = \vec{N}
+	\end{align*}
+
+	\begin{definition}[\textbf{Momentum Angular y Análogo Rotacional de la Segunda Ley de Newton para Sistemas}]
+		La expresión del momentum angular para un sistema de partículas
+		\begin{equation}
+			\vec{L}^{\mathcal{O}} = \underbrace{\sum_{\alpha =1}^{N} {\vec{r}}\,'_{\alpha} \times {\dot{\vec{p}}}\,'_{\alpha}}_{\textup{Momentum Angular alrededor del CM}} + \underbrace{M \vec{R} \times \dot{\vec{R}}}_{\textup{Momentum Angular del CM alrededor a $\mathcal{O}$}}
+			\label{eq: sismomentumA}
+		\end{equation}
+		La expresión del análogo rotacional para un sistema de partículas de la Segunda Ley de Newton:
+		\begin{equation}
+			\vec{N} = \dot{\vec{L}}_{\mathcal{O}}
+			\label{eq: sisNSecondlawrot}
+		\end{equation}
+	\end{definition}
+
+	El siguiente es el resultado ya conocido del Teorema de Ejes paralelos, el cual puede ser útil para resolver problemas concernientes a este tema.
 
 	\begin{theorem}[\textbf{Teorema de Ejes paralelos}]
 		\begin{equation}
@@ -520,6 +658,115 @@
 
 		La demostración de este teorema tal y como se encuentra escrito aquí se le dejará al lector y se recomienda verlo como una simplificación del teorema de ejes paralelos real que se desarrollará más adelante.
 	\end{theorem}
+
+	Ahora hay que estudiar la forma de la energía cinética para un sistema de partículas. Para esto se va a empezar la deducción desde el trabajo de mover la partícula $\alpha$ de un punto a otro para la posterior definición de la energía cinética del sistema: 
+
+	\begin{equation*}
+		W_{\alpha}^{AB} = \int_{A}^{B} \vec{F}_{\alpha} \cdot d\vec{r}_{\alpha}
+	\end{equation*}
+	Sumando para todo el sistema: 
+	\begin{equation*}
+		W_{AB} = \sum_{\alpha = 1}^{N} \int_{A}^{B} \vec{F}_{\alpha} \cdot d\vec{r}_{\alpha} = \sum_{\alpha = 1}^{N} \int_{A}^{B} d\left(\frac{1}{2} m_{\alpha}v_{\alpha}^{2}\right)
+	\end{equation*}
+	Entonces, en una primera instancia se puede definir la energía cinética del sistema como:
+
+	\begin{equation*}
+		T = \sum_{\alpha =1}^{N} T_{\alpha} = \sum_{\alpha =1}^{N} \frac{1}{2} m_{\alpha}v_{\alpha}^{2}	
+	\end{equation*}
+
+	Pero se está buscando una expresión que tome en cuenta el centro de masa, entonces hay que continuar trabajando con este último resultado. Recordando de la \Figref{fig: sismangular1} lo siguiente: $\vec{r}_{\alpha} = \vec{R} + {\vec{r}}\,'_{\alpha}$. De aquí se obtine:
+
+	\begin{equation*}
+		\vec{r}_{\alpha} = \vec{R} + {\vec{r}}\,'_{\alpha} \Rightarrow \; \dot{\vec{r}}_{\alpha} = \dot{\vec{R}} + {\dot{\vec{r}}}\,'_{\alpha}
+	\end{equation*}
+
+	\begin{align*}
+		\dot{\vec{r}}\,^{2}_{\alpha} &= \dot{\vec{r}} \cdot \dot{\vec{r}} = \left( \dot{\vec{R}} + {\dot{\vec{r}}}\,'_{\alpha} \right) \cdot \left( \dot{\vec{R}} + {\dot{\vec{r}}}\,'_{\alpha} \right) \\ 
+		& = {\dot{\vec{r}}}^{\,'\,2}_{\alpha} + 2 {\dot{\vec{r}}}\,'_{\alpha} \dot{\vec{R}} + \dot{\vec{R}}^{2}
+	\end{align*}
+
+	Con esta expresión y la provisional de la energía cinética, reemplazando en la energía:
+
+	\begin{align*}
+		T & = \frac{1}{2} \sum_{\alpha =1}^{N} m_{\alpha} \dot{\vec{r}}^{2} = \frac{1}{2} \sum_{\alpha =1}^{N} m_{\alpha} \left( {\dot{\vec{r}}}^{\,'\,2}_{\alpha} + 2 {\dot{\vec{r}}}\,'_{\alpha} \dot{\vec{R}} + \dot{\vec{R}}^{2}\right) \\ 
+		& = \frac{1}{2} \sum_{\alpha =1}^{N} m_{\alpha} {\dot{\vec{r}}}^{\,'\,2}_{\alpha} + \underbrace{\cancelto{0}{\sum_{\alpha =1}^{N} m_{\alpha} {\dot{\vec{r}}}\,'_{\alpha} \dot{\vec{R}}}}_{\textup{Velocidad del CM respecto al CM}} + \frac{1}{2} \sum_{\alpha =1}^{N} m_{\alpha} \dot{\vec{R}}^{2} \\ 
+		& = \frac{1}{2} M \dot{\vec{R}}^{2} + \frac{1}{2} \sum_{\alpha =1}^{N} m_{\alpha} {\dot{\vec{r}}}^{\,'\,2}_{\alpha}
+	\end{align*}
+
+	\newpage
+
+	\begin{definition}[\textbf{Energía Cinética de un Sistema de Partículas}] 
+		La expresión de la energía cinética es la siguiente:
+
+		\begin{equation}
+			T = \underbrace{\frac{1}{2} M \dot{\vec{R}}^{2}}_{\textup{T del CM}} \; \; \; + \underbrace{\frac{1}{2} \sum_{\alpha =1}^{N} m_{\alpha} {\dot{\vec{r}}}^{\,'\,2}_{\alpha}}_{\textup{T de las partículas respecto al CM}}
+			\label{eq: sisT}
+		\end{equation}
+	\end{definition}
+
+	Por último, falta encontrar la expresión para la energía potencial en el caso de sistemas de partículas. Comenzado desde la expresión del trabajo de todo el sistema:
+
+	\begin{equation*}
+		W_{AB} = \sum_{\alpha = 1}^{N} \int_{A}^{B} \vec{F}_{\alpha}^{e} \cdot d\vec{r}_{\alpha} \; \; + \sum_{\left . \begin{matrix} \alpha \: , \: \beta = 1\\ \alpha \neq \beta \end{matrix} \right .}^{N} \int_{A}^{B} \vec{f}_{\alpha \beta} \cdot d\vec{r}_{\alpha}
+	\end{equation*}
+
+	Será necesario considerar que $\vec{F}_{\alpha}$ y $\vec{f}_{\alpha \beta}$ son todas fuerzas conservativas por lo que se pueden escribir como \mn{Los subíndices $\alpha$ en los gradientes significa que los gradientes se realizan en las respectivas coordenadas de la partícula $\alpha$}:
+
+	\begin{align*}
+		\vec{F}_{\alpha} = -\vec{\nabla}_{\alpha} V_{\alpha} \; \; \; & y \; \; \; \vec{f}_{\alpha \beta} = -\vec{\nabla}_{\alpha} \bar{V}_{\alpha \beta}
+	\end{align*}
+
+	Para simplificar el desarrollo de la deducción se van a trabajar los terminos del trabajo total del sistema por separado.Entonces, comenzando por la que contiene las fuerzas externas\mn{Esta expresión ya debería ser familiar de la sección anterior.}:
+
+	\begin{align*}
+		\sum_{\alpha = 1}^{N} \int_{A}^{B} \vec{F}_{\alpha}^{e} \cdot d\vec{r}_{\alpha} & = \sum_{\alpha = 1}^{N} \int_{A}^{B} -\vec{\nabla}_{\alpha} V_{\alpha} \cdot d\vec{r}_{\alpha} \\ 
+		& = - \sum_{\alpha = 1}^{N} \left .V_{\alpha} \right|_{A}^{B}
+	\end{align*}
+
+	Como se plantearon fuerzas conservativas, se sabe que $\bar{V}_{\alpha \beta}$ solo depende de las distancias entre las partículas $\alpha$ y $\beta$, y por lo tanto depende de 6 cantidades (las posiciones de ambas partículas). Entonces la derivada total de  $\bar{V}_{\alpha \beta}$: 
+
+	\begin{align*}
+		d\bar{V}_{\alpha \beta} & = \sum_{i=1}^{3} \left(\frac{\partial \bar{V}_{\alpha \beta}}{\partial x_{\alpha,i}} dx_{\alpha,i} + \frac{\partial \bar{V}_{\alpha \beta}}{\partial x_{\beta,i}}dx_{\beta,i}\right) \\ 
+		& = \left(\vec{\nabla}_{\alpha} \bar{V}_{\alpha \beta} \right) \cdot d\vec{r}_{\alpha} +\left(\vec{\nabla}_{\beta} \bar{V}_{\alpha \beta} \right) \cdot d\vec{r}_{\beta}
+	\end{align*}
+
+	Recordando que: $\bar{V}_{\alpha \beta} = \bar{V}_{\beta \alpha}$ , se tiene lo siguiente:
+
+	\begin{equation*}
+		\vec{\nabla}_{\alpha} \bar{V}_{\alpha \beta} = \vec{\nabla}_{\alpha} \bar{V}_{\beta \alpha} \rightarrow -\vec{f}_{\alpha \beta} = \vec{f}_{\beta \alpha}
+	\end{equation*}
+
+	Ahora el segundo termino\mn{A continuación se usan variedad de definiciones que se establecieron anteriormente}:
+
+	\begin{align*}
+		\sum_{\left . \begin{matrix} \alpha \: , \: \beta = 1\\ \alpha \neq \beta \end{matrix} \right .}^{N} \int_{A}^{B} \vec{f}_{\alpha \beta} \cdot d\vec{r}_{\alpha} &= \sum_{ \alpha < \beta = 1}^{N} \int_{A}^{B} \left(\vec{f}_{\alpha \beta} \cdot d\vec{r}_{\alpha} +  \vec{f}_{\beta \alpha} \cdot d\vec{r}_{\beta} \right) \\ 
+		& = \sum_{ \alpha < \beta = 1}^{N} \int_{A}^{B} \vec{f}_{\alpha \beta} \cdot \left( d\vec{r}_{\alpha} -  d\vec{r}_{\beta} \right) \\
+		& =  \sum_{ \alpha < \beta = 1}^{N} \int_{A}^{B} \vec{f}_{\alpha \beta} \cdot \vec{r}_{\alpha \beta} \\ 
+		& = - \sum_{ \alpha < \beta = 1}^{N} \int_{A}^{B} d\bar{V}_{\alpha \beta} \\ 
+		& = - \sum_{ \alpha < \beta = 1}^{N} \left . \bar{V}_{\alpha \beta} \right|_{A}^{B}
+	\end{align*}
+
+	\begin{definition}[\textbf{Energía Potencial de un Sistema de Partículas}]
+		La expresión de la energía potencial de un sistema de partículas:
+
+		\begin{equation}
+			V = \underbrace{\sum_{\alpha = 1}^{N} V_{\alpha}}_{\textup{Energía potencial externa}} + \underbrace{\sum_{ \alpha < \beta = 1}^{N} \bar{V}_{\alpha \beta}}_{\textup{Energía potencial interna}}
+			\label{eq: potential}
+		\end{equation}
+		Hay casos, por ejemplo, cuerpos rígidos en los que es posible ignorar la energía potencial interna porque es constante.
+	\end{definition}
+
+	\begin{definition}[\textbf{Energía total del Sistema de Partículas}]
+		La expresión para el sistema de partículas es la misma que para una única partícula \Eqref{eq: Energy}
+		\begin{equation*}
+			E = T + V
+		\end{equation*}
+	\end{definition}
+
+	\subsection{Problemas resueltos}
+
+
+	\includepdf[pages={135-140},templatesize = {8 in}{8.5 in} ]{AMeca.pdf}
 	
 	\section{Sistemas no inerciales}
 	\label{sec: noinerciales}

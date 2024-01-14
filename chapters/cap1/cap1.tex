@@ -5,10 +5,10 @@
 	\part{Mecánica Newtoniana} 
 	\label{prt:Mecánica Newtoniana}
 
-	\section{Vectores, Matrices y Cálculo Vectorial}\label{sec:vectores}
+	\section{Vectores}\label{sec:vectores}
 
 
-	Esto ya deberían saberlo y probablemente se actualice de último $: \left . \!  \right)$
+	Esto ya deberían saberlo y probablemente se actualice de último $: \left . \!  \right )$
 
 	\newpage
 	\section{Mecánica Newtoniana para una partícula}\label{sec: N.particula }
@@ -30,11 +30,12 @@
 			\label{eq: momentuml}
 		\end{equation}
 	\end{definition}
+	
+	Las leyes de Newton tal y como se expresarán a continuación \textcolor{red}{son unicamente válidas}  para sistemas de referencias \textbf{inerciales}, es decir, sistemas de referencia que no poseen ningun tipo de aceleración o rotación respecto a las estrellas fijas. 
+	
+	Un marco de referencia inercial no es más que una construcción teórica, ya que no es posible conseguir un marco completamente inercial. No obstante, \textit{es posible aproximarse a un marco inercial}. Por ejemplo, es posible considerar un marco de referencia en el centro del planeta Tierra, fijo a el mismo planeta (rota junto a él), como un marco inercial en un gran número de ocasiones.
 
 	\marginnote{Un estado de \textbf{equilibrio} se refiere a que el cuerpo o sistema de interés se encuentra movientodose con velocidad lineal constante (\textbf{equilibrio dinámico}) o se encuentra en reposo (\textbf{equilibrio estático}). \vspace{2cm}}
-	
-	Las leyes de Newton tal y como se expresarán a continuación son unicamente válidas para sistemas de referencias \textbf{inerciales}, es decir, sistemas de referencia que no poseen ningun tipo de aceleración.
-
 
 	\begin{definition}[\textbf{Primera Ley de Newton o  Ley de la Inercia}]
 		Un cuerpo mantiene su estado de equilibrio a menos de que una fuerza neta diferente de cero lo perturbe. Dicho de otra forma, un cuerpo siempre mantendrá su estado de equilibrio a menos de que una fuerza neta llegue a afectarlo.
@@ -58,6 +59,7 @@
 
 		\begin{equation}
 			\sum \vec{F} = m \vec{a}
+			\label{eq: NSecondlawmcons}
 		\end{equation}
 	\end{definition}
 
@@ -426,7 +428,7 @@
 		Al conservarse la energía en un sistema, es posible encontrarse con que la partícula de interés se encuentra en un punto de equilibrio de algún tipo (Estables u Inestables), alrededor de estos puntos es posible obtener mucha información acerca del comportamiento del sistema. Las siguientes son las condiciones para determinar que es un punto de equilibrio y clasificarlo.
 
 		\begin{itemize}
-			\item \textbf{Pundo de equilibrio: } Se define como un punto en algun potencial que cumple con: \\ 
+			\item \textbf{Punto de equilibrio: } Se define como un punto en algun potencial que cumple con: \\ 
 				\begin{equation}
 				\left .  \vec{\nabla }V \right|_{\vec{r} \: = \: \vec{r}_{eq}} = 0
 				\end{equation}
@@ -771,5 +773,137 @@
 	\section{Sistemas no inerciales}
 	\label{sec: noinerciales}
 
+	Por ahora se han trabajado solo con sistemas inerciales (los cuales poseen marcos de referencia inerciales respecto a las estrellas fijas, es decir marcos de referencia que no aceleran o rotan respecto a estas o que se considera que no lo hacen) y además se plantearon las Leyes de Newton válidas para estos sistemas, por lo que es posible pensar que los marcos de referencia no inerciales pueden ser un problema catastrófico para la toda física, mas no es así. 
+
+	En esta sección se desarrollará expresiones que permitirán la generalización de la Mecánica Newtoniana, de modo que se puedan estudiar sistemas inerciales como no inerciales y se mostrarán peculiaridades que poseen los sistemas no inerciales.
+
+	\subsection{Sistemas de referencia en traslación y rotación}
+
+	\begin{marginfigure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=6cm]{noinercial.pdf}
+            \caption{Un sistema de referencia \textcolor{blue}{inercial ${\mathcal{O}}'$}  y uno \textcolor{orange}{no inercial $\mathcal{O}$} desde los que se estudia una partícula $P$.}
+            \label{fig: noinercial}
+        \end{figure}
+    \end{marginfigure}
+
+	Antes de comenzar, se va a establecer la notación presente en \Figref{fig: noinercial}, entonces:
+
+	\begin{itemize}
+		\item ${\mathcal{O}}'$ : Es el origen del marco de referencia inercial.
+		\item $\mathcal{O}$ : Origen del marco de referencia no inercial, con aceleración traslacional y rotación.
+		\item $\vec{{r}'}$ : Es el radio vector con origen en ${\mathcal{O}}'$ que da la posición del punto $P$ respecto a dicho origen.
+		\item $\vec{R}$ : Es el radio vector con origen en ${\mathcal{O}}'$ que une los marcos de referencia  \textcolor{blue}{inercial ${\mathcal{O}}'$} y \textcolor{orange}{no inercial $\mathcal{O}$}.
+		\item $\vec{r}$ :  Radio vector con el origen en $\mathcal{O}$ que da la posición el punto $P$ respecto a dicho origen.
+		\item $\vec{omega}$ : Es la velocidad angular con que rota el marco de referencia  \textcolor{orange}{no inercial $\mathcal{O}$}.
+	\end{itemize}
+
+	Hecho esto, el objetivo del siguiente desarrollo es deducir la relación diferencial para la derivada temporal de un vector arbitrario (Por ejemplo, el vector posición) entre vectores con origen inercial y vectores con origen no inercial.
+
+	Ahora, por propiedades vectoriales se sabe:
+
+	\begin{equation}
+		\vec{{r}'} = \vec{R} + \vec{r}
+		\label{eq: posiciondosmarcos}
+	\end{equation}
+
+	Suponga que todos estos vectores son medidos desde el marco de referencia \mn{Para referirse de ahora en adelante al marco de referencia desde el que es medido un vector se usará: \begin{itemize} \item \textbf{fijo :} Al medir desde el marco inercial. \\ \item \textbf{rotacional :} al medir desde el marco de referencia no inercial sin importar la naturaleza de la no inercialidad. \\ \end{itemize} } \textcolor{blue}{inercial ${\mathcal{O}}'$} y se aplica la derivada temporal:
+
+	\begin{equation}
+		\left( \frac{d \vec{{r}'}}{dt} \right)_{fijo} = \left( \frac{d \vec{R}}{dt} \right)_{fijo} + \left( \frac{d \vec{r}}{dt} \right)_{fijo}
+		\label{eq: velocidaddosmarcos}
+	\end{equation}
+
+	Aquí la pregunta, ¿qué pasa si el observador se encuentra en el marco no inercial y desde este se desea realizar los análisis? Hay que obtener una relación que permita lo siguiente:
+
+	\begin{equation*}
+		\left( \frac{d \vec{r}}{dt} \right)_{fijo} \leftrightarrow \left( \frac{d \vec{r}}{dt} \right)_{rotacional}
+	\end{equation*}
+
+	Entonces, desarrollando la expresión del vector $\vec{r}_{rotacional}$ y derivada temporal (Desde el marco no inercial):
+
+	\begin{align*}
+		\vec{r}_{rotacional} &= \sum_{i=1}^{3} r_{i}\hat{e}_{i} \\
+		\left( \frac{d \vec{r}}{dt} \right)_{rotacional} &= \sum_{i=1}^{3} \frac{d r_{i}}{dt} \hat{e}_{i}
+	\end{align*}
+
+	Ahora la velocidad desde una perspectiva inercial \mn{Aquí va a ser importante recordar \Eqref{eq: vwrelation}, que se puede reescribir de la siguiente forma para aplicarla al caso actual de estudio: \\ \begin{equation*} \left( \frac{d \vec{r}}{dt} \right)_{fijo} =  \vec{\omega} \times \vec{r} \end{equation*} }:
+
+	\begin{align*}
+		\left( \frac{d \vec{r}}{dt} \right)_{fijo} &=  \sum_{i=1}^{3} \frac{d r_{i}}{dt} \hat{e}_{i} + \sum_{i=1}^{3} r_{i} \left( \frac{d \hat{e}_{i}}{dt}\right)_{fijo} \\ 
+		&= \underbrace{\sum_{i=1}^{3} \frac{d r_{i}}{dt} \hat{e}_{i}}_{\left( \frac{d \vec{r}}{dt} \right)_{rotacional}} + \sum_{i=1}^{3} r_{i} \left(\vec{\omega} \times \hat{e}_{i} \right) \\
+		&=  \left( \frac{d \vec{r}}{dt} \right)_{rotacional} + \vec{\omega} \times \sum_{i=1}^{3} r_{i} \hat{e}_{i} \\ 
+		&= \left( \frac{d \vec{r}}{dt} \right)_{rotacional} + \vec{\omega} \times \vec{r}
+	\end{align*}
+
+	Finalmente se obtuvo la relación de las derivadas temporales entre los sistemas de referencia para el caso de la posición de la partícula $P$:
+
+	\begin{equation}
+		\left( \frac{d \vec{r}}{dt} \right)_{fijo} = \left( \frac{d \vec{r}}{dt} \right)_{rotacional} + \vec{\omega} \times \vec{r}
+		\label{eq: inertialnoinertialr}
+	\end{equation}
+
+	De forma general, dicha relación se puede escribir para cualquier vector:
+
+	\begin{equation}
+		\left( \frac{d \vec{G}}{dt} \right)_{fijo} = \left( \frac{d \vec{G}}{dt} \right)_{rotacional} + \vec{\omega} \times \vec{G}
+		\label{eq: inertialnoinertialG}
+	\end{equation}
+
+	Continuando con la \Eqref{eq: velocidaddosmarcos}, esta expresión se puede reescribir utilizando la \Eqref{eq: inertialnoinertialr}:
+
+	\begin{align*}
+		\left( \frac{d \vec{{r}'}}{dt} \right)_{fijo} & = \left( \frac{d \vec{R}}{dt} \right)_{fijo} + \left( \frac{d \vec{r}}{dt} \right)_{fijo} \\ 
+		& = \left( \frac{d \vec{R}}{dt} \right)_{fijo} + \left( \frac{d \vec{r}}{dt} \right)_{rotacional} + \vec{\omega} \times \vec{r} \\ 
+		& = \dot{\vec{R}}_{f} + \dot{ \vec{r}}_{r} + \vec{\omega} \times \vec{r} \\ 
+	\end{align*}
+
+	\begin{definition}[\textbf{Relación entre las velocidades inerciales y no inerciales}]
+		\begin{equation}
+			\dot{ \vec{{r}'}}_{f} = \dot{\vec{R}}_{f} + \dot{ \vec{r}}_{r} + \vec{\omega} \times \vec{r}
+			\label{eq: vinirelation}
+		\end{equation}
+	\end{definition}
+
+
+	Derivando la \Eqref{eq: vinirelation} con respecto al tiempo, se llegará a la relación de la aceleración entre los marcos de referencia.
+
+	\begin{align*}
+		\left(\frac{d \dot{ \vec{{r}'}}_{f} }{dt}\right)_{f} &= \left(\frac{d  \dot{\vec{R}}_{f} }{dt}\right)_{f} + \left(\frac{d  \dot{ \vec{r}}_{r}}{dt}\right)_{f} + \left(\frac{d  }{dt}\right)_{f} \left( \vec{\omega} \times \vec{r} \right) \\ 
+		& = \ddot{\vec{R}}_{f} + \ddot{ \vec{r}}_{r} + \vec{\omega} \times \dot{ \vec{r}}_{r} + \dot{\vec{\omega}} \times \vec{r} + \vec{\omega} \times \dot{\vec{r}}_{f} \\
+		& = \ddot{\vec{R}}_{f} + \ddot{ \vec{r}}_{r} + \vec{\omega} \times \dot{ \vec{r}}_{r} + \dot{\vec{\omega}} \times \vec{r} + \vec{\omega} \times \left(\dot{\vec{r}}_{r} + \vec{\omega} \times \vec{r} \right) \\ 
+		& = \ddot{\vec{R}}_{f} + \ddot{ \vec{r}}_{r} + \dot{\vec{\omega}} \times \vec{r}  + 2\vec{\omega} \times \dot{ \vec{r}}_{r} + \vec{\omega} \times \left( \vec{\omega} \times \vec{r}  \right)
+	\end{align*}
+
+	\begin{definition}[\textbf{Relación entre las aceleraciones inerciales y no inerciales}]
+		\begin{equation}
+			\ddot{ \vec{{r}'}}_{f}  = \ddot{\vec{R}}_{f} + \ddot{ \vec{r}}_{r} + \dot{\vec{\omega}} \times \vec{r}  + 2\vec{\omega} \times \dot{ \vec{r}}_{r} + \vec{\omega} \times \left( \vec{\omega} \times \vec{r}  \right)
+			\label{eq: ainirelation}
+		\end{equation}
+	\end{definition}
+
+	\subsection{Segunda Ley de Newton para Sistemas No Inerciales}
+
+	A continuación se va a establecer la forma general de la Segunda Ley de Newton y de este modo extender los casos de análisis de este formalismo. A partiendo de la \Eqref{eq: NSecondlawmcons} y posteriormente haciendo uso de la \Eqref{eq: ainirelation}:
+
+	\begin{align*}
+		\sum \vec{F} &= m \ddot{\vec{{r}'}}_{f} \\
+		& = m \left[ \ddot{\vec{R}}_{f} + \ddot{ \vec{r}}_{r} + \dot{\vec{\omega}} \times \vec{r}  + 2\vec{\omega} \times \dot{ \vec{r}}_{r} + \vec{\omega} \times \left( \vec{\omega} \times \vec{r}  \right) \right] \\ 
+		& = m\ddot{\vec{R}}_{f} + m\ddot{ \vec{r}}_{r} + m \dot{\vec{\omega}} \times \vec{r} + 2m \vec{\omega} \times \dot{ \vec{r}}_{r} + m \vec{\omega} \times \left( \vec{\omega} \times \vec{r}  \right) \\ 
+		\Rightarrow \sum \vec{F} & - m\ddot{\vec{R}}_{f} -  m \dot{\vec{\omega}} \times \vec{r} - 2m \vec{\omega} \times \dot{ \vec{r}}_{r} - m \vec{\omega} \times \left( \vec{\omega} \times \vec{r}  \right) = m\ddot{ \vec{r}}_{r}
+	\end{align*}
+
+	\begin{definition}[\textbf{Segunda Ley de Newton No Inercial}]
+		\begin{equation}
+			\underbrace{\sum \vec{F}}_{\textup{Fuerzas reales}} - m\ddot{\vec{R}}_{f} -  m \dot{\vec{\omega}} \times \vec{r} \underbrace{- 2m \vec{\omega} \times \dot{ \vec{r}}_{r}}_{\textup{Fuerza de Coriolis}}  \overbrace{- m \vec{\omega} \times \left( \vec{\omega} \times \vec{r}  \right)}^{\textup{Fuerza Centrífuga}} = m\ddot{ \vec{r}}_{r}
+			\label{eq: NSecondlawnoinertial}
+		\end{equation}
+	\end{definition}
+	
+	Es preciso introducir el concepto de \textbf{fuerzas ficticias}, estas son aquellas ``fuerzas'' que resultan ser introducidas en la Segunda Ley de Newton para generalizar la expresión original (\Eqref{eq: NSecondlawmcons}) de modo que sea capaz de analizar desde marcos de referencia no inerciales. Es decir, estas no son fuerzas o interacciones reales con el entorno; son más bien un artificio que permite ampliar el alcance de la Segunda Ley de Newton.
+
+	\subsection{Problemas resueltos}
+	\includepdf[pages={164-182},templatesize = {8 in}{8.5 in} ]{AMeca.pdf}
 
 \end{document}

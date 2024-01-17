@@ -4,9 +4,80 @@
 \begin{document}
     \part{Mecánica Lagrangiana}
 
+    Este capítulo se va a dedicar a establecer un formalismo alternativo a las Leyes de Newton, el formalismo lagrangiano aplicado a la mećanica clásica. Este nuevo formalismo produce resultados equivalentes al de Newton, como es de esperarse, no obstante permite simplificar de gran manera los análisis.
+
+    \begin{definition}[\textbf{Grados de Libertad}]
+        Para un sistema físico cualquiera, el número de grados de libertad corresponde al número más pequeño de cantidades escalares independientes necesarias para dar la posición de un objeto de interés dentro del sistema.
+
+        \begin{itemize}
+            \item \textbf{Partícula en una dimensión:} 1 grado de libertad, la partícula se encuentra sobre una recta está puede ir hacia adelante o atrás.
+            \item \textbf{Partícula en 2 dimensiones:} 2 grados de libertad, la partícula tiene libertad de moverse en un plano.
+            \item \textbf{Partícula en 3 dimensiones:} 3 grados de libertad, la partícula tiene puede moverse en un espacio tridimensional (en un ancho, largo y altura respecto a un origen).
+            \item \textbf{n-Partícullas en 3 dimensiones:} 3n grados de libertad, cada partícula individual tiene sus 3 grados de libertada propios y la suma es el total de grados de libertad del sistema.
+        \end{itemize}
+        
+    \end{definition}
+
+    \begin{definition}[\textbf{Coordenadas Generalizadas}]
+        Son el conjunto de cantidades \mn{No necesariamente tienen que ser distancias, pueden ser cantidades adimensionales o incluso con unidades de energía.} que especifican \textcolor{red}{completamente} el estado de un sistema. \\
+
+        Ahora, suponiendo que un sistema de estudio está conformado por $n$ partículas y al estar en un espacio tridimensional, en un principio el sistema posee $3n$ grados de libertad. Si el sistema posee \textcolor{orange}{$m$ ecuaciones  de restricción}\mn{Asociadas o no a fuerzas de restricción. Estas pueden ser incluso cortes en la dimensionalidad del espacio en que se encuentra el sistema.}, tendrá $m$ restricciones en los grados de libertad totales del sistema, entonces los grados de libertad son:
+
+        \begin{equation*}
+            s = 3n -m \leftarrow     \begin{matrix} \textup{Grados de libertad de un} \\ \textup{sistema en forma general}\end{matrix}       
+        \end{equation*}
+
+        Es posible escribir las ecuaciones de transformación entre las coordenadas generalizadas y coordenadas curvilíneas cualesquiera, como se presenta a continuación:
+
+        \begin{equation*}
+            \begin{matrix}
+                \begin{matrix}
+                \textup{Coordenadas Curvilíneas}  \\ 
+                    \\ 
+                    \left\{\begin{matrix}
+                            x_{\alpha,i} = x_{\alpha,i}\left ( q_{j},t \right ) \\ 
+                            \dot{x}_{\alpha,i} = \dot{x}_{\alpha,i} \left (  q_{j}, \dot{q}_{j},t \right ) \\ 
+                            \end{matrix}\right .
+                \end{matrix} 
+                
+                \leftrightarrow 
+                
+                \begin{matrix}
+                    \textup{Coordenadas Generalizadas} \\ 
+                    \\ 
+                    \left\{\begin{matrix}
+                                q_{j} = q_{j} \left ( x_{\alpha,i}, t \right )\\ 
+                                \dot{q}_{j} = \dot{q}_{j} \left ( x_{\alpha,i}, \dot{x}_{\alpha,i} , t\right )
+                            \end{matrix}\right .
+                
+                \end{matrix} 
+                \\ 
+                \\ 
+                \left\{\begin{matrix}
+                            \alpha = 1,2,...,n\\ 
+                            i= 1,2,3\\ 
+                            j= 1,2,...s
+                        \end{matrix}\right .
+            \end{matrix}
+        \end{equation*}
+
+        Si se tiene el conjunto más pequeño de coordenadas generalizadas, este es conocido como el \textcolor{blue}{conjunto adecuado} de coordenadas \mn{Va a ser común desarrollar un problemas tanto con el conjunto adecuado como con un conjunto de cantidades que superen al adecuado.}.
+    \end{definition}
 
 
+    \begin{definition}[\textbf{Fuerzas Generalizadas}]
+        
+    \end{definition}
 
+    \begin{definition}[\textbf{Principio de D'Alambert}]
+        
+    \end{definition}
 
+    \section{Principio de Hamilton}
+
+    \begin{definition}[\textbf{Principio de Hamilton}]
+
+        
+    \end{definition}
 
 \end{document}

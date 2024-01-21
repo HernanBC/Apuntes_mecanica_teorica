@@ -6,8 +6,14 @@
 
     Este capítulo se va a dedicar a establecer un formalismo alternativo a las Leyes de Newton, el formalismo lagrangiano aplicado a la mećanica clásica. Este nuevo formalismo produce resultados equivalentes al de Newton, como es de esperarse, no obstante permite simplificar de gran manera los análisis.
 
+    Aquí se expresará la Mecánica Lagrangiana de forma general, de modo que se aplique a sistemas conservativos (o no) y a sistemas de partículas.
+
+    \section{Conceptos Fundamentales}
+
+    \subsection{Grados de Libertad y Coordenadas Generalizadas}
+
     \begin{definition}[\textbf{Grados de Libertad}]
-        Para un sistema físico cualquiera, el número de grados de libertad corresponde al número más pequeño de cantidades escalares independientes necesarias para dar la posición de un objeto de interés dentro del sistema.
+        Para un sistema físico cualquiera, el número de grados de libertad corresponde al número más pequeño de cantidades escalares independientes necesarias para dar la posición (Sin contar el tiempo) de un objeto de interés dentro del sistema.
 
         \begin{itemize}
             \item \textbf{Partícula en una dimensión:} 1 grado de libertad, la partícula se encuentra sobre una recta está puede ir hacia adelante o atrás.
@@ -61,23 +67,139 @@
             \end{matrix}
         \end{equation*}
 
-        Si se tiene el conjunto más pequeño de coordenadas generalizadas, este es conocido como el \textcolor{blue}{conjunto adecuado} de coordenadas \mn{Va a ser común desarrollar un problemas tanto con el conjunto adecuado como con un conjunto de cantidades que superen al adecuado.}.
+        Si se tiene el conjunto más pequeño de coordenadas generalizadas, este es conocido como el \textcolor{blue}{conjunto adecuado} de coordenadas \mn{Va a ser común desarrollar un problemas tanto con el conjunto adecuado como con un conjunto de cantidades que superen al adecuado.}. En este caso, el conjunto de cantidades (Coordenadas Generalizadas) corresponde a los grados de libertad del sistema.
     \end{definition}
 
+    \subsection{Trabajo Virtual, Fuerzas Generalizadas y Principio de D'Alambert}
 
-    \begin{definition}[\textbf{Fuerzas Generalizadas}]
+    A partir de aquí se considerará un sistema compuesto por $n$ partículas, cada una de ellas expuesta a su vector de fuerza neta correspondiente $F_{\alpha}$. Siendo $F_{\alpha}$ la suma de cualquier clase de fuerzas que actuen sobre la partícula $\alpha$ (Fuerzas conservativas,  no conservativas, de restricción) y posee sus componentes, por ejemplo, en coordenadas cartesinas $F_{\alpha_{x}}$ , $F_{\alpha_{y}}$ y $F_{\alpha_{z}}$. Además, la fuerza se puede separar de la forma $\vec{F}_{\alpha} = \vec{F}_{\alpha} ^{e} + \vec{f}_{\alpha} $, donde $\vec{F}_{\alpha} ^{e}$ corresponde a todas las fuerzas externas aplicadas en la partícula $\alpha$ y $\vec{f}_{\alpha}$ corresponde a todas las fuerzas de restricción que afectan a dicha partícula.
+
+    Un trabajo infinitesimal provocado por esta fuerza:
+
+    \begin{align*}
+        \delta W &= \sum_{\alpha=1}^{n} \vec{F}_{i}  \cdot \delta \vec{r}_{\alpha} \\ 
+                &= \sum_{\alpha=1}^{n} \vec{F}_{\alpha} ^{e}  \cdot \delta \vec{r}_{\alpha} + \sum_{\alpha=1}^{n} \vec{f}_{\alpha}  \cdot \delta \vec{r}_{\alpha}
+    \end{align*}
+
+    \textcolor{red}{Limitando el análisis a sistemas tales que las fuerzas de restricción no producen este tipo de trabajo infinitesimal:} 
+
+    \begin{align*}
+        \delta W &= \sum_{\alpha=1}^{n} \vec{F}_{\alpha} ^{e} \cdot \delta \vec{r}_{\alpha} + \cancelto{0}{\sum_{\alpha=1}^{n} \vec{f}_{\alpha}  \cdot \delta \vec{r}_{\alpha}} \\ 
+            & = \sum_{\alpha=1}^{n} \vec{F}_{\alpha} ^{e} \cdot \delta \vec{r}_{\alpha}
+    \end{align*}
+
+    Redefiniendo el vector $\vec{F}_{\alpha}$ como la suma de todas las fuerzas aplicadas sobre la partícula $\alpha$, excepto las de restricción, dado que ya se establecio que para este análisis estas no producen trabajo. se introduce el siguiente concepto:
+
+
+    \begin{definition}[\textbf{Trabajo Virtual}] 
+        Corresponde al trabajo producido por un \textcolor{blue}{desplazamiento virtual \mn{Al decir ``virtual'', es para diferenciarlo de un desplazamiento o trabajo real del sistema.}}. Un desplazamiento virtual es un desplazamiento infinitesimal de un sistema, una alteración en la configuración de este, como resultado de un cambio infinitesimal arbitrario de las coordenadas $\delta \vec{r}_{\alpha}$ , que debe ser consistente con las fuerzas y las restricciones impuestas en el sistema en un cierto instante $t$. \\ 
+
+        \begin{equation}
+            \delta W = \sum_{\alpha=1}^{n} \vec{F}_{\alpha}  \cdot \delta \vec{r}_{\alpha}
+            \label{eq: trabajovirtual}
+        \end{equation}
+    \end{definition}
+
+    A partir de la definición anterior, buscando colocar el trabajo virtual en el conjunto de coordenadas generalizadas:\\ 
+
+    Es posible desarrollar $ \delta \vec{r}_{\alpha}$ a partir de la regla de la cadena para $3$ grados de libertad como:
+
+    \begin{equation*}
+        \delta \vec{r}_{\alpha} = \sum_{j=1}^{s} \frac{\partial \vec{r}_{\alpha}}{\partial q_{j}} \delta q_{j}
+    \end{equation*}
+
+    Excluyendo la derivada parcial temporal por la definición del desplazamiento virtual, que solo considera desplazamientos en las coordenadas. Realizando el cambio de $\delta \vec{r}_{\alpha}$  en la \Eqref{eq: trabajovirtual}:
+
+    \begin{align*}
+        \delta W & = \sum_{\alpha=1}^{n} \vec{F}_{\alpha}  \cdot \delta \vec{r}_{\alpha} \\ 
+                & = \sum_{\alpha=1}^{n} \vec{F}_{\alpha}  \cdot \sum_{j=1}^{s} \frac{\partial \vec{r}_{\alpha}}{\partial q_{j}} \delta q_{j} \\ 
+                & = \sum_{\alpha=1}^{n} \sum_{j=1}^{s} \vec{F}_{\alpha} \cdot \frac{\partial \vec{r}_{\alpha}}{\partial q_{j}} \delta q_{j} \\ 
+                & = \sum_{j=1}^{s} Q_{j} \delta q_{j}
+    \end{align*}
+
+    De lo anterior se obtiene:
+
+    \begin{equation*}
+        Q_{j} = \sum_{\alpha=1}^{n} \vec{F}_{\alpha} \cdot \frac{\partial \vec{r}_{\alpha}}{\partial q_{j}} 
+    \end{equation*}
+
+    Lo cual al considerar que tanto $\vec{F}_{\alpha}$ y $\vec{r}_{\alpha}$ se encuentran inicialmente en coordenadas curvilíneas:
+
+    \begin{equation*}
+        Q_{j} = \sum_{\alpha=1}^{n} \left( F_{x_{1,\alpha}} \frac{\partial x_{1,\alpha}}{\partial q_{j}} +   F_{x_{2,\alpha}} \frac{\partial x_{2,\alpha}}{\partial q_{j}} + F_{x_{3,\alpha}} \frac{\partial x_{3,\alpha}}{\partial q_{j}} \right)
+    \end{equation*}
+
+    \begin{definition}[\textbf{Fuerzas Generalizadas}] 
+        Corresponde a un nombre genérico para referirse, en un principio, a fuerzas y torques escritos en las coordenadas generalizadas que describen el sistema. Estas son dadas en los componentes correspondientes a cada coordenada generalizada. Comúnmente las fuerzas o torques son escritas inicialmente en coordendas curvilíneas en un inicio para luego ser transformadas a fuerzas generalizadas.
+
+        \begin{equation}
+            Q_{j} = \sum_{\alpha=1}^{n} \left( F_{x_{1,\alpha}} \frac{\partial x_{1,\alpha}}{\partial q_{j}} +   F_{x_{2,\alpha}} \frac{\partial x_{2,\alpha}}{\partial q_{j}} + F_{x_{3,\alpha}} \frac{\partial x_{3,\alpha}}{\partial q_{j}} \right)
+            \label{eq: fuerzasgeneralizadas}
+        \end{equation}
+
+        Para conocer la naturaleza de la fuerza generalizada (Fuerza, Torque, ...), se debe revisar la dimensionalidad del trabajo virtual ejercido por tal fuerza, es decir:
+
+        \begin{equation*}
+            \delta W_{j} = Q_{j} \delta q_{j} \; \; \textup{; Debe poseer unidades de energía}
+        \end{equation*}
+
+        Una vez establecidas las coordenadas generalizadas, es sencillo describir a que corresponden las fuerzas generalizadas a partir de lo anterior.
+        
+    \end{definition}
+    
+    Ahora, en busca de generar una forma alternativa de mecánica, se va a explotar el concepto anterior. Primero, a partir de la \Eqref{eq: NSecondlaw}:
+
+    \begin{align*}
+        \vec{F}_{\alpha} &= \dot{\vec{p}}_{\alpha} \\ 
+        \Rightarrow \vec{F}_{\alpha} &- \dot{\vec{p}}_{\alpha} = 0 \\ 
+    \end{align*}
+
+    Esta expresión enuncia que una partícula expuesta a una fuerza $ \vec{F}_{\alpha}$, se encontrará en equilibrio si se le es ejercida una fuerza efectiva contraria a la original $- \dot{\vec{p}}_{\alpha}$. Entonces, con esto se puede buscar el trabajo virtual de todas estas fuerzas sobre el sistema, que por lo anterior se sabe que será cero.
+
+    \begin{align*}
+        \delta W = \sum_{\alpha=1}^{n} \left( \vec{F}_{\alpha} - \dot{\vec{p}}_{\alpha} \right) \cdot \delta \vec{r}_{\alpha} = 0
+    \end{align*}
+
+    \begin{definition}[\textbf{Principio de D'Alambert}] 
+        Este principio esta expresando en coordenadas generalizadas.
+
+        \begin{equation}
+            \sum_{\alpha=1}^{n} \left( \vec{F}_{\alpha} - \dot{\vec{p}}_{\alpha}\right) \cdot \delta \vec{r}_{\alpha} = 0
+            \label{eq: DAlambertP}
+        \end{equation}
         
     \end{definition}
 
-    \begin{definition}[\textbf{Principio de D'Alambert}]
-        
-    \end{definition}
+    Un resultado de este principio, es el Principio de Trabajo Virtual \mn{Es el caso estático del Principio de D'Alambert, ampliamente usado en ingeniería.}:
+
+        \begin{equation*}
+            \delta W = \sum_{\alpha=1}^{n} \vec{F}_{\alpha}  \cdot \delta \vec{r}_{\alpha} = 0
+        \end{equation*}
+
+
 
     \section{Principio de Hamilton}
 
-    \begin{definition}[\textbf{Principio de Hamilton}]
+    Este principio puede ser deducido desde el Principio de D'Alambert, no obstante, la deducción no se realizará por ahora.
 
-        
+    \begin{definition}[\textbf{Principio de Hamilton Extendido}]
+        El movimiento de un sistema desde un tiempo $t_1$ a un tiempo $t_2$ es tal que la integral de línea (La llamada Acción o integral de la Acción) de la energía cinética más el trabajo ejercido por las fuerzas del sistema, tenga un valor estacionario para el camino real que sigue el sistema \mn{El Principio de Hamilton original se define de forma similar, donde la Acción es de la forma: \begin{equation*} I = \int_{t_1}^{t_2} T - V dt \end{equation*}}.
+
+        \begin{equation}
+            I = \int_{t_1}^{t_2} T + W dt 
+            \label{eq: PHamiltonE}
+        \end{equation}
+
+        \begin{equation*}
+            \delta \int_{t_1}^{t_2} T + W dt = 0 \leftarrow \textup{Valor estacionario}
+        \end{equation*}
+
     \end{definition}
+
+    \section{Ecuaciones de la Mecánica de Lagrange}
+
+    A continuación, en esta sección se va deducir la ecuación de Euler - Lagrange a partir del Principio de Hamilton Extendido de modo que sea aplicable a sistemas no conservativos y se introducirán conceptos propios de la Mecánica Lagrangiana. \\ 
+
+    Comenzando con la deducción de la ecuación Euler - Lagrange, se debe optimizar la Acción (\Eqref{eq: PHamiltonE}) para conseguir un valor estacionario:
 
 \end{document}

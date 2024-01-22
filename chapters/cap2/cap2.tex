@@ -186,20 +186,135 @@
         El movimiento de un sistema desde un tiempo $t_1$ a un tiempo $t_2$ es tal que la integral de línea (La llamada Acción o integral de la Acción) de la energía cinética más el trabajo ejercido por las fuerzas del sistema, tenga un valor estacionario para el camino real que sigue el sistema \mn{El Principio de Hamilton original se define de forma similar, donde la Acción es de la forma: \begin{equation*} I = \int_{t_1}^{t_2} T - V dt \end{equation*}}.
 
         \begin{equation}
-            I = \int_{t_1}^{t_2} T + W dt 
+            I = \int_{t_1}^{t_2} T\left(q_{j}, \dot{q}_{j}, t\right) + W dt 
             \label{eq: PHamiltonE}
         \end{equation}
 
         \begin{equation*}
-            \delta \int_{t_1}^{t_2} T + W dt = 0 \leftarrow \textup{Valor estacionario}
+            \delta \int_{t_1}^{t_2} T\left(q_{j}, \dot{q}_{j}, t\right) + W dt = 0 \leftarrow \textup{Valor estacionario}
         \end{equation*}
 
     \end{definition}
 
     \section{Ecuaciones de la Mecánica de Lagrange}
 
-    A continuación, en esta sección se va deducir la ecuación de Euler - Lagrange a partir del Principio de Hamilton Extendido de modo que sea aplicable a sistemas no conservativos y se introducirán conceptos propios de la Mecánica Lagrangiana. \\ 
+    A continuación, en esta sección se va deducir la \textcolor{red}{ecuación de Euler - Lagrange}  a partir del Principio de Hamilton Extendido de modo que sea aplicable a sistemas no conservativos y se introducirán conceptos propios de la Mecánica Lagrangiana. \\ 
 
     Comenzando con la deducción de la ecuación Euler - Lagrange, se debe optimizar la Acción (\Eqref{eq: PHamiltonE}) para conseguir un valor estacionario:
+
+    Optimizar la Acción significa, tomar la variación de esta:
+    
+    \begin{equation*}
+        \delta I = \delta \int_{t_1}^{t_2} T\left(q_{j}, \dot{q}_{j}, t\right) + W dt = 0 
+    \end{equation*}
+
+    \begin{align*}
+        & \delta \int_{t_1}^{t_2} T\left(q_{j}, \dot{q}_{j}, t\right) + W dt = 0 \\ 
+        \Rightarrow & \int_{t_1}^{t_2} \delta T\left(q_{j}, \dot{q}_{j}, t\right) + \delta  W dt = 0 \\ 
+        \Rightarrow  \int_{t_1}^{t_2}  & \left[  \sum_{j=1}^{s} \left( \frac{\partial T}{\partial q_{j}}   \delta q_{j} +\frac{\partial T}{\partial \dot{q}_{j}} \delta \dot{q}_{j}  \right) + \sum_{j=1}^{s} Q_{j} \delta q_{j}  \right] dt = 0 \\ 
+        \Rightarrow \int_{t_1}^{t_2} \sum_{j=1}^{s} & \left(\frac{\partial T}{\partial q_{j}} \delta q_{j} + \textcolor{blue}{\frac{\partial T}{\partial \dot{q}_{j}} \delta \dot{q}_{j}}   + Q_{j} \delta q_{j} \right) dt = 0 \\ 
+    \end{align*}
+
+    Con este resultado, ahora se tomará el terminó marcado en azul para transformarlo en una expresión equivalente:
+
+    \begin{align*}
+        \int_{t_1}^{t_2} \sum_{j=1}^{s} \frac{\partial T}{\partial \dot{q}_{j}} \delta \dot{q}_{j} dt & = \int_{t_1}^{t_2} \sum_{j=1}^{s} \frac{\partial T}{\partial \dot{q}_{j}} \delta \left(\frac{d q_{j}}{d t}\right) dt \\ 
+        & = \int_{t_1}^{t_2} \sum_{j=1}^{s} \frac{\partial T}{\partial \dot{q}_{j}} \frac{d}{d t} \left(\delta  q_{j}\right) dt \\ 
+        & = \sum_{j=1}^{s} \int_{t_1}^{t_2} \frac{\partial T}{\partial \dot{q}_{j}} \frac{d}{d t} \left(\delta  q_{j}\right) dt \\ 
+    \end{align*}
+
+    Resolviendo esta integral por integración por partes para un término arbitrario de la suma \mn{El término: \begin{equation*} \left.  \frac{\partial T}{\partial \dot{q}_{j}} \delta  q_{j}  \right|_{t_1}^{t_2} = 0 \end{equation*} porque los extremos están fijos, de modo que la variación en la coordenada generalizada $q_{j}$ es igual a $0$ cuando se está en el momento inicial $t_1$ y en el momento final $t_2$ }:
+
+    \begin{align*}
+        \int_{t_1}^{t_2} \overbrace{\frac{\partial T}{\partial \dot{q}_{j}}}^{\textcolor{orange}{u}} \underbrace{\frac{d}{d t} \left(\delta  q_{j}\right)}_{\textcolor{violet}{dv} } dt & = \cancelto{0}{\left.  \frac{\partial T}{\partial \dot{q}_{j}} \delta  q_{j}  \right|_{t_1}^{t_2}} - \int_{t_1}^{t_2}  \delta  q_{j} \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right) dt =  - \int_{t_1}^{t_2}  \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right)  \delta  q_{j}  \; dt \\ 
+    \end{align*}
+
+    De volviendo esta expresión al interior de la ecuación inicial:
+
+    \begin{align*}
+        & \int_{t_1}^{t_2} \sum_{j=1}^{s}  \left(\frac{\partial T}{\partial q_{j}} \delta q_{j} + \textcolor{blue}{\frac{\partial T}{\partial \dot{q}_{j}} \delta \dot{q}_{j}}   + Q_{j} \delta q_{j} \right) dt = 0 \\ 
+        \Rightarrow  & \int_{t_1}^{t_2} \sum_{j=1}^{s}  \left(\frac{\partial T}{\partial q_{j}} \delta q_{j} + \textcolor{blue}{- \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right)  \delta  q_{j}}   + Q_{j} \delta q_{j} \right) dt = 0 \\ 
+        \Rightarrow  & \int_{t_1}^{t_2} \left \{ \sum_{j=1}^{s}  \left[\frac{\partial T}{\partial q_{j}}  - \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right)     + Q_{j}  \right] \delta q_{j} \right\}  dt = 0
+    \end{align*}
+
+    Entonces, para que esta integral sea igual a cero, el contenido de la integral debe ser igual a cero para valores arbitrarios de las variaciones $\delta q_{1}$ , $\delta q_{2}$ , ... , $\delta q_{s}$: 
+
+    \begin{equation*}
+        \sum_{j=1}^{s}  \left[\frac{\partial T}{\partial q_{j}}  - \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right)     + Q_{j}  \right] \delta q_{j} = 0
+    \end{equation*}
+
+    Dada la arbitrariedad de dichas variaciones, es posible suponer que todas las variaciones de $\delta q$'s son cero, excepto un $\delta q_{j}$. Se debe cumplir para ese $\delta q_{j}$:
+
+    \begin{equation*}
+        \frac{\partial T}{\partial q_{j}}  - \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right)     + Q_{j} = 0
+    \end{equation*}
+
+    Reescribiendo \mn{Esta última ecuación ya posee la forma de una ecuación de Euler}:
+
+    \begin{equation*}
+        \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right) - \frac{\partial T}{\partial q_{j}} = Q_{j}
+    \end{equation*}
+
+    Para terminar esta deducción, es necesario separar las fuerzas conservativas (c) de las no conservativas (nc) \marginnote{\textcolor{red}{Recuerde que $Q_{j}$ no posee ninguna fuerza de restricción}}, entonces:
+
+    \begin{align*}
+        Q_{j} & = Q_{j}^{c} + Q_{j}^{nc} \\ 
+            & = \sum_{\alpha}^{n} \vec{F}_{\alpha}^{c} \cdot \frac{\partial \vec{r}_{\alpha}}{\partial q_{j}} + \sum_{\alpha}^{n} \vec{F}_{\alpha}^{nc} \cdot \frac{\partial \vec{r}_{\alpha}}{\partial q_{j}}
+    \end{align*}
+
+    Ahora, es necesario recordar la \Eqref{eq: conservativeforce} para fuerzas conservativas, lo que permite: 
+
+    \begin{align*}
+        Q_{j} & = \sum_{\alpha}^{n} - \vec{\nabla} V_{\alpha} \cdot \frac{\partial \vec{r}_{\alpha}}{\partial q_{j}} + \sum_{\alpha}^{n} \vec{F}_{\alpha}^{nc} \cdot \frac{\partial \vec{r}_{\alpha}}{\partial q_{j}} \\ 
+        & =  - \sum_{\alpha}^{n} \left( \frac{\partial V_{\alpha}}{\partial x_{1,\alpha}} \frac{\partial x_{1,\alpha}}{\partial q_{j}} +   \frac{\partial V_{\alpha}}{\partial x_{2,\alpha}} \frac{\partial x_{2,\alpha}}{\partial q_{j}} + \frac{\partial V_{\alpha}}{\partial x_{3,\alpha}} \frac{\partial x_{3,\alpha}}{\partial q_{j}} \right) + Q_{j}^{nc} \\ 
+        & = - \sum_{\alpha}^{n} \frac{\partial V_{\alpha}}{\partial q_{j}} + Q_{j}^{nc} \\ 
+        & = - \frac{\partial V}{\partial q_{j}} + Q_{j}^{nc}
+    \end{align*}
+
+    El volver a colocar $ \vec{F}^{nc}$ como $ Q_{j}^{nc}$ no representa un problema por ahora, debido a que la forma de estas fuerzas puede llegar a depender del problema en que se planteen y no hay ninguna pérdida al dejarlas de forma general. \\ 
+
+    Con la expresión anterior, se introduce en la ecuación de Euler:
+
+    \begin{align*}
+        & \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right) - \frac{\partial T}{\partial q_{j}} = Q_{j} \\ 
+        \\
+        \Rightarrow & \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right) - \frac{\partial T}{\partial q_{j}} = - \frac{\partial V}{\partial q_{j}} + Q_{j}^{nc} \\ 
+        \\
+        \Rightarrow & \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right) - \left(\frac{\partial T}{\partial q_{j}} - \frac{\partial V}{\partial q_{j}}\right) =  Q_{j}^{nc}
+    \end{align*}
+
+    A esta última ecuación no le hará ningún daño aprovechar encarecidamente de la definición que acompaña a la \Eqref{eq: conservativeforce}, diciendo lo siguiente \mn{Introducir el término \begin{equation*} -\frac{d}{d t} \left(\frac{\partial V}{\partial \dot{q}_{j}}\right)  \end{equation*} no debe ser un problema, puesto que en un inicio será cero por la limitación de fuerzas conservativas. \\ No obstante, fuera de la mecánica clásica será común que este término no sea cero en un intento de escribir potenciales para fuerzas que, al menos en el sentido usual, no los poseen. Por ejemplo la fuerza de Lorentz que da lugar a potenciales generalizados $V = V\left(q_{j}, \dot{q}_{j}\right) $.}:
+
+    \begin{align*}
+        & \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right) \textcolor{blue}{-\frac{d}{d t} \left(\frac{\partial V}{\partial \dot{q}_{j}}\right) } - \left(\frac{\partial T}{\partial q_{j}} - \frac{\partial V}{\partial q_{j}}\right) =  Q_{j}^{nc} \\ 
+        \\
+        \Rightarrow & \frac{d}{d t} \left(\frac{\partial \left(T - V\right) }{\partial \dot{q}_{j}} \right) - \frac{\partial \left(T - V\right)}{\partial q_{j}} =  Q_{j}^{nc} \\
+    \end{align*}
+
+    \begin{definition}[\textbf{Lagrangiano}]
+        Se define la función $\mathcal{L}$ como el Lagrangiano del sistema, función que para el caso de un sistema conservativo dicta toda la dinámica del sistema al operarlo para cada coordenada generalizada en la ecuación de Euler-Lagrange.
+
+        \begin{equation}
+            \mathcal{L} = T - V
+            \label{eq: Lagrangiano}
+        \end{equation}
+        
+    \end{definition}
+
+    \begin{definition}[\textbf{Ecuaciones de Euler-Lagrange para sistemas semi-conservativos}] 
+        
+        \begin{equation}
+            \frac{d}{d t} \left(\frac{\partial \mathcal{L} }{\partial \dot{q}_{j}} \right) - \frac{\partial \mathcal{L}}{\partial q_{j}} =  Q_{j}^{nc} \; \; \; ; \; j=1,2,...,s
+            \label{eq: eqlagrange}
+        \end{equation}
+
+        Al operar esta ecuación sobre el Lagrangiano del sistema y tomando o no las fuerzas disipativas para cada coordenada generalizada, la solución que genera serán s ecuaciones diferenciales de segundo orden que dan las condiciones para que el camino que sigue el sistema en el espacio de configuración sea un valor estacionario para el Principio de Hamilton (Extendido) \Eqref{eq: PHamiltonE}.
+        
+    \end{definition}
+
+
+    \subsection{Problemas resueltos}
+    \includepdf[pages={82-105,107-111},templatesize = {8 in}{8.5 in} ]{AMeca.pdf}
+%%%%%   
 
 \end{document}

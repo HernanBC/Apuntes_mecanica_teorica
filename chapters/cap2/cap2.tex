@@ -200,6 +200,8 @@
 
     A continuación, en esta sección se va deducir la \textcolor{red}{ecuación de Euler - Lagrange}  a partir del Principio de Hamilton Extendido de modo que sea aplicable a sistemas no conservativos y se introducirán conceptos propios de la Mecánica Lagrangiana. \\ 
 
+    \subsection{Deducción del formalismo Lagrangiano}
+
     Comenzando con la deducción de la ecuación Euler - Lagrange, se debe optimizar la Acción (\Eqref{eq: PHamiltonE}) para conseguir un valor estacionario:
 
     Optimizar la Acción significa, tomar la variación de esta:
@@ -291,6 +293,8 @@
         \Rightarrow & \frac{d}{d t} \left(\frac{\partial \left(T - V\right) }{\partial \dot{q}_{j}} \right) - \frac{\partial \left(T - V\right)}{\partial q_{j}} =  Q_{j}^{nc} \\
     \end{align*}
 
+    \subsection{Ecuaciones de Euler-Lagrange}
+
     \begin{definition}[\textbf{Lagrangiano}]
         Se define la función $\mathcal{L}$ como el Lagrangiano del sistema, función que para el caso de un sistema conservativo dicta toda la dinámica del sistema al operarlo para cada coordenada generalizada en la ecuación de Euler-Lagrange.
 
@@ -310,6 +314,22 @@
 
         Al operar esta ecuación sobre el Lagrangiano del sistema y tomando o no las fuerzas disipativas para cada coordenada generalizada, la solución que genera serán s ecuaciones diferenciales de segundo orden que dan las condiciones para que el camino que sigue el sistema en el espacio de configuración sea un valor estacionario para el Principio de Hamilton (Extendido) \Eqref{eq: PHamiltonE}.
         
+    \end{definition}
+
+    \subsection{Ecuaciones de Euler-Lagrange con Restricciones: Multiplicadores Indeterminados de Lagrange}
+
+    Por ahora no habra una pruebra de esta sección y no esta terminada
+
+    \begin{definition}[\textbf{Restricciones}]
+        Una restricción es una ecuación algebraica de las cordenadas.
+
+        
+    \end{definition}
+    
+    \begin{definition}[\textbf{Ecuaciones de Euler-Lagrange con Restricciones}]
+        \begin{equation}
+            \frac{d}{d t} \left(\frac{\partial \mathcal{L} }{\partial \dot{q}_{j}} \right) - \frac{\partial \mathcal{L}}{\partial q_{j}} + \sum_{i=1}^{m}\lambda_{i} \frac{\partial g_{i}}{\partial q_{j}}=  Q_{j}^{nc}
+        \end{equation}
     \end{definition}
 
 

@@ -24,6 +24,45 @@
         
     \end{definition}
 
+    \begin{definition}[\textbf{Fuerzas de Restricción}]
+        Las fuerzas de restricción, como su nombre lo indican, restringen el movimiento que puede tener un sistema desde la libertad total, es decir, cortan los grados de libertad que posee un sistema. Algunos ejemplos:
+        \begin{itemize}
+            \item La tensión debido a la cuerda en un péndulo.
+            \item La fuerza normal.
+            \item Fuerzas electromagnéticas entre partículas de un sólido.
+        \end{itemize}
+    \end{definition}
+
+    \begin{definition}[\textbf{Restricciones}]
+        Las restricciones son las limitaciones que se le imponen al movimiento del sistema, ya sea por observación de dicha limitación o simplificación del sistema y son dadas por medios de ecuaciones que contengan los parámetros que son restringidos en el sistema (Posiciones, velocidades, ...). Las restricciones que posea un sistema están directamente relacionadas a las fuerzas de restricción que el sistema siente, de acuerdo a los ejemplos de fuerzas de restricción:
+
+        \begin{itemize}
+            \item Un sistema atado a una cuerda.
+            \item Un sistema sobre una o entre superfies.
+            \item Un cuerpo, sus partículas se mueven muy poco o no lo hacen en sus posiciones relativas al CM.
+        \end{itemize}
+        
+        Existen diferentes tipos de restricciones de acuerdo a como se expresan:
+
+        \begin{itemize}
+            \item \textcolor{red}{Holonómicas:} Son restricciones que se pueden escribir de la formar: 
+                \begin{equation}
+                    g\left(\vec{r}_{1},\vec{r}_{2}, ...,\vec{r}_{n}\right) = 0
+                \end{equation}
+            \item \textcolor{red}{No Holonómicas:} Son aquellas restricciones que no pueden ser escritas como las holonómicas.
+        \end{itemize}
+
+        También es posible clasificar a las restricciones a partir de su dependencia temporal:
+
+        \begin{itemize}
+            \item \textcolor{red}{Esclerónomas:} El tiempo no es una variable explícita
+            \item \textcolor{red}{Reónomas:} El tiempo es una variable explícita
+        \end{itemize}
+
+    \end{definition}
+
+    A partir de aquí se va a trabajar con restricciones holonómicas únicamente a menos de que se indique lo contrario. Esto porque este tipo de restricción permite reducir el número de coordenadas necesarias para describir el movimiento de un sistema a partir de un nuevo conjunto de coordenadas conocido como coordenadas generalizadas.
+
     \begin{definition}[\textbf{Coordenadas Generalizadas}]
         Son el conjunto de cantidades \mn{No necesariamente tienen que ser distancias, pueden ser cantidades adimensionales o incluso con unidades de energía.} que especifican \textcolor{red}{completamente} el estado de un sistema. \\
 
@@ -202,9 +241,9 @@
 
     \subsection{Deducción del formalismo Lagrangiano}
 
-    Comenzando con la deducción de la ecuación Euler - Lagrange, se debe optimizar la Acción (\Eqref{eq: PHamiltonE}) para conseguir un valor estacionario:
+    Considere un sistema compuesto por $n$ partículas y con $m$ restricciones, dando a lugar $s = n-m$ grados de libertad, igual a la cantidad de coordenadas generalizadas ($q_{1},q_{2},...,q_{s}$) que describen la dinámica del sistema. Además, se expone a cada una de las partículas a una fuerza neta (totalmente conservativa, no conservativa o con ambos tipos de fuerzas) $Q_{j}$ con $j=1,2,...s$.
 
-    Optimizar la Acción significa, tomar la variación de esta:
+    Comenzando con la deducción de la ecuación Euler - Lagrange, se debe optimizar la Acción (\Eqref{eq: PHamiltonE}) para conseguir un valor estacionario, hay que tomar la variación de esta e igualarla a cero:
     
     \begin{equation*}
         \delta I = \delta \int_{t_1}^{t_2} T\left(q_{j}, \dot{q}_{j}, t\right) + W dt = 0 
@@ -302,6 +341,11 @@
             \mathcal{L} = T - V
             \label{eq: Lagrangiano}
         \end{equation}
+
+        \begin{itemize}
+            \item $T$ : Es la energía cinética total del sistema, que posea el sistema.
+            \item $V$ : Es la energía potencial total del sistema, la suma de todas las energías potenciales que afecten al sistema.
+        \end{itemize}
         
     \end{definition}
 
@@ -316,16 +360,36 @@
         
     \end{definition}
 
-    \subsection{Ecuaciones de Euler-Lagrange con Restricciones: Multiplicadores Indeterminados de Lagrange}
+    \section{Ecuaciones de la Mecánica de Lagrange con Restricciones}
 
-    Por ahora no habra una pruebra de esta sección y no esta terminada
+    En esta sección se va a ampliar la mecánica de Lagrange para resolver problemas con condiciones \textcolor{red}{no holonómicas de cierto tipo} \mn{El formalismo será válido para restricciones semi-holonómicas: \begin{equation*} g\left(q_{1}, q_{2}, ...q_{s}, \dot{q}_{1}, \dot{q}_{2}, ..., \dot{q}_{s}, t \right) =0 \end{equation*} } a partir del Principio de Hamilton (Extendido). Para esto se va a comenzar de nuevo con la deducción de las ecuaciones de Euler-Lagrange, pero se van a usar resultados ya mostrados de la deducción anterior que aquí también sean válidos.
 
-    \begin{definition}[\textbf{Restricciones}]
-        Una restricción es una ecuación algebraica de las cordenadas.
+    \subsection{Deducción del formalismo de Lagrange con Restricciones}
 
-        
-    \end{definition}
-    
+    Nuevamente considere un sistema compuesto por $n$ partículas y con $m$ restricciones $g_{i} \left(q_{1},q_{2},...,q_{s}, \dot{q}_{1},\dot{q}_{2},...\dot{q}_{s}, t \right) = 0$, dando a lugar $s\geq3n-m$ grados de libertad, se puede hallar un conjunto de \textcolor{blue}{coordenadas generalizadas adecuado ($q_{1},q_{2},...,q_{s}$)} tal que sea \textcolor{blue}{independiende de las restricciones} impuestas al sistema. Además, se expone a cada una de las partículas a una fuerza neta\mn{\textcolor{red}{Recuerde que esta fuerza no posee ningún tipo de fuerza de restricción en su interior, es una agrupación de fuerzas conservativas y no conservativas.}}  $Q_{j}$ con $j=1,2,...s$.\\ 
+
+    Entonces, aplicando al Principio de Hamilton Extendido la técnica de Multiplicadores Indeterminados de Lagrange y suponiendo que el multiplicador es de la forma $\lambda \left(q_{j}, \dot{q}_{j}, t \right)$ , se llega a:
+
+    \begin{align*}
+        I = \int_{t_1}^{t_2} \left[ T\left(q_{j}, \dot{q}_{j}, t\right) + W + \sum_{i=1}^{m} \lambda_{i}\left(q_{j}, \dot{q}_{j}, t \right) \; g_{i}\left(q_{j}, \dot{q}_{j}, t \right) \right] dt 
+    \end{align*}
+
+    Buscando un punto de estacionario de la Acción, hay que tomar la variación de esta e igualarla a cero:
+
+    \begin{align*}
+        & \delta I = \delta  \int_{t_1}^{t_2} \left[ T\left(q_{j}, \dot{q}_{j}, t\right) + W + \sum_{i=1}^{m} \lambda_{i}\left(q_{j}, \dot{q}_{j}, t \right) \; g_{i}\left(q_{j}, \dot{q}_{j}, t \right) \right] dt = 0 \\ 
+        \Rightarrow & \int_{t_1}^{t_2} \left[ \delta T\left(q_{j}, \dot{q}_{j}, t\right) + \delta  W + \delta \sum_{i=1}^{m} \lambda_{i}\left(q_{j}, \dot{q}_{j}, t \right) \; g_{i}\left(q_{j}, \dot{q}_{j}, t \right) \right] dt = 0 \\ 
+    \end{align*}
+
+    Desarrollando primero los términos ya conocidos, $\delta T$ y $\delta W$:
+
+    \begin{align*}
+        \Rightarrow &  \int_{t_1}^{t_2} \left\{ \sum_{j=1}^{s} \left[ \frac{\partial T}{\partial q_{j}}  - \frac{d}{d t} \left(\frac{\partial T}{\partial \dot{q}_{j}} \right) + Q_{j} \right] \delta q_{j}  + \delta \sum_{i=1}^{m} \lambda_{i}\left(q_{j}, \dot{q}_{j}, t \right) \; g_{i}\left(q_{j}, \dot{q}_{j}, t \right)\right\} dt = 0 \\ 
+        \Rightarrow & 
+    \end{align*}
+
+
+    \subsection{Ecuaciones de Euler-Lagrange con Restricciones}
     \begin{definition}[\textbf{Ecuaciones de Euler-Lagrange con Restricciones}]
         \begin{equation}
             \frac{d}{d t} \left(\frac{\partial \mathcal{L} }{\partial \dot{q}_{j}} \right) - \frac{\partial \mathcal{L}}{\partial q_{j}} + \sum_{i=1}^{m}\lambda_{i} \frac{\partial g_{i}}{\partial q_{j}}=  Q_{j}^{nc}
@@ -334,7 +398,7 @@
 
 
     \subsection{Problemas resueltos}
-    \includepdf[pages={82-105,107-111},templatesize = {8 in}{8.5 in} ]{AMeca.pdf}
+    %\includepdf[pages={82-105,107-111},templatesize = {8 in}{8.5 in} ]{AMeca.pdf}
 %%%%%   
 
 \end{document}

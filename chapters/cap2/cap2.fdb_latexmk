@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1705907308 "/home/hernan/Documentos/Apuntes_mecanica_teorica/chapters/cap2/cap2.tex" "chapters/cap2/cap2.pdf" "cap2" 1705907317
+["pdflatex"] 1706079839 "/home/hernan/Documentos/Apuntes_mecanica_teorica/chapters/cap2/cap2.tex" "chapters/cap2/cap2.pdf" "cap2" 1706079841
   "/etc/texmf/web2c/texmf.cnf" 1694141562 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/hernan/Documentos/Apuntes_mecanica_teorica/chapters/cap2/cap2.tex" 1705907308 23491 6b18fe985c827df500f72fe1386e30fc ""
+  "/home/hernan/Documentos/Apuntes_mecanica_teorica/chapters/cap2/cap2.tex" 1706079839 29374 0a2116b57e3dea9af55208d4cbce42b5 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvbc7t.tfm" 1136768653 2672 88159036c64e674fcd9515bc9c7052d4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
@@ -282,11 +282,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1697060625 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1697060649 2798059 3dd19100514f887e268b3db3968bb238 ""
-  "AMeca.pdf" 1703816820 91574058 fe189704cc5906afabbe73fde25df7be ""
   "NotesTeXV3.sty" 1703208249 19514 574dd07d13f3350f65ca9466bdd7b319 ""
-  "chapters/cap2/cap2.aux" 1705907317 5377 0ab99cc6bc349a54f166d9af3a26bb40 "pdflatex"
-  "chapters/cap2/cap2.out" 1705907317 2577 1ed2bf8e446e5c0ed0da4478d88d1a3a "pdflatex"
-  "chapters/cap2/cap2.tex" 1705907308 23491 6b18fe985c827df500f72fe1386e30fc ""
+  "chapters/cap2/cap2.aux" 1706079841 5944 530eb3bf26e86ee8f948f96170eb5f7f "pdflatex"
+  "chapters/cap2/cap2.out" 1706079841 3043 bae77797176bf5d7e8a89a269a9fd207 "pdflatex"
+  "chapters/cap2/cap2.tex" 1706079839 29374 0a2116b57e3dea9af55208d4cbce42b5 ""
   "main.tex" 1705472173 2922 3635eeda7245b8a0f43f10990b5ea4e6 ""
   (generated)
   "chapters/cap2/cap2.aux"

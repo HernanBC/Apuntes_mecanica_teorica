@@ -422,7 +422,24 @@
 	\end{theorem}
 
 	\newpage
-	\subsection{Complementos de la conservación de la energía}
+	\subsection{Complementos sobre la energía}
+	\marginnote{Si se deseara hacer el análisis de estabilidad e inestabilidad para potenciales que sean funciones de varias variables es necesario utilizar \textcolor{blue}{teoría de optimización en funciones de variables variables} según sea el caso. A continuación se expresa el \textcolor{red}{Método de la Matriz Hessiana para n variables} para un punto $\vec{r}_{eq}$: \\ 
+		\\
+		La matriz Hessiana para una función V se forma con las siguientes entradas: \\ 
+		\begin{equation*} 
+			H_{ij} = \left . \frac{\partial^2 V}{\partial x_i \partial x_j} \right|_{\vec{r} \: = \: \vec{r}_{eq}}  ; i,j = 0,...,n.
+		\end{equation*}
+					
+		El criterio para la concavidad de la función V usando dicha matriz se basa en el uso de los determinantes ($\Delta$) de las matrices menores de la matriz Hessiana ($h_i$): \\ 
+
+		$\bullet$ Si $\Delta h_{i} > 0$  con $m=0,1,..,n$ entonces es un mínimo local de V. \\
+
+		$\bullet$ Si $\Delta h_{2m+1} < 0 $ ; $m=0,1,..,n$ y $\Delta h_{2m} > 0 $ con $m=0,1,..,n$ entonces es un máximo local de V. \\
+
+		$\bullet$ Cualquier otro patrón de los determinantes de las menores corresponde a un punto de silla. \\
+
+		$\bullet$ Si  $\Delta h_{n} = 0$, el estudio no es concluyente y hay que hacer un análisis particular. Se aclara que $h_{n} = H$
+		}
 
 	\begin{definition}[\textbf{Condiciones de estabilidad}]
 		
@@ -431,25 +448,25 @@
 		\begin{itemize}
 			\item \textbf{Punto de equilibrio: } Se define como un punto en algun potencial que cumple con: \\ 
 				\begin{equation}
-				\left .  \vec{\nabla }V \right|_{\vec{r} \: = \: \vec{r}_{eq}} = 0
+				\left .  \vec{\nabla }V \right|_{\vec{r} \: = \: \vec{r}_{eq}} = \vec{0}
 				\end{equation}
 			\begin{itemize}
-				\item Punto de Equilibrio \textcolor{red}{Estable}: De colocar una partícula en reposo en este punto y sin la aparición de fuerzas a su alrededor, la partícula permanecerá en equilibrio en dicho punto por siempre. Ahora, si esta es colocada en reposo en los alrededores de este punto o desde el punto de equilibrio se le ejerce una fuerza que la obligue a moverse, la partícula comenzará un movimiento en dirección a este punto y se moverá perpetuamente a su alrededor siempre que $E =$ constante. La forma de determinar los puntos estables: \\ 
+				\item Punto de Equilibrio \textcolor{red}{Estable}: De colocar una partícula en reposo en este punto y sin la aparición de fuerzas a su alrededor, la partícula permanecerá en equilibrio en dicho punto por siempre. Ahora, si esta es colocada en reposo en los alrededores de este punto o desde el punto de equilibrio se le ejerce una fuerza que la obligue a moverse, la partícula comenzará un movimiento en dirección a este punto y se moverá perpetuamente a su alrededor siempre que $E =$ constante. La forma de determinar los puntos estables en un potencial unidimensional: \\ 
 				\begin{equation}
-					\left .  \vec{\nabla }^{2}V \right|_{\vec{r} \: = \: \vec{r}_{eq}} > 0
+					\left .  \frac{d^2}{dx^2}V \right|_{x \: = \: x_{eq}} > 0 
 					\label{eq: puntoestable}
 				\end{equation}
-				\item Punto de Equilibrio \textcolor{red}{Inestable}: De forma similar al anterior, si se coloca una partícula en reposo en este punto y sin la aparición de fuerzas a su alrededor, la partícula permanecerá en equilibrio en dicho punto por siempre. No obstante, de aparecer algún tipo de fuerza o colocarla en los alrededores del punto de equilibrio inestable, la partícula se encontrará en un movimiento unicamente limitado por la cantidad de energía del sistema y es posible que nunca vuelva a pasar por dicho punto. La forma de encontrar los puntos inestables: \\  
+				\item Punto de Equilibrio \textcolor{red}{Inestable}: De forma similar al anterior, si se coloca una partícula en reposo en este punto y sin la aparición de fuerzas a su alrededor, la partícula permanecerá en equilibrio en dicho punto por siempre. No obstante, de aparecer algún tipo de fuerza o colocarla en los alrededores del punto de equilibrio inestable, la partícula se encontrará en un movimiento unicamente limitado por la cantidad de energía del sistema y es posible que nunca vuelva a pasar por dicho punto. La forma de encontrar los puntos inestables en un potencial unidimensional: \\  
 				\begin{equation}
-					\left .  \vec{\nabla }^{2}V \right|_{\vec{r} \: = \: \vec{r}_{eq}} < 0
+					\left .  \frac{d^2}{dx^2}V \right|_{x \: = \: x_{eq}} < 0
 					\label{eq: puntoinestable}
 				\end{equation}
 				\item Punto \textcolor{red}{No concluyente}:  				
 				\begin{equation}
-					\left .  \vec{\nabla }^{2}V \right|_{\vec{r} \: = \: \vec{r}_{eq}} = 0
+					\left .  \frac{d^2}{dx^2}V \right|_{x \: = \: x_{eq}} = 0
 					\label{eq: puntonoconcluyente}
 				\end{equation}
-				\\Es necesario comprobar derivadas de orden superior bajo los mismos criterios para determinar estabilidad u inestabilidad de la posición de equilibrio. De obtenerse  $\left .  \vec{\nabla }^{3}V \right|_{\vec{r} \: = \: \vec{r}_{eq}} = 0$, es necesario continar con orden 4 en la derivación, comprobar criterios y, de ser necesario, repetir los pasos en derivaciones superiores.
+				\\Es necesario comprobar derivadas de orden superior bajo los mismos criterios para determinar estabilidad u inestabilidad para un potencial unidimensionalde la posición de equilibrio. De obtenerse  $\left .  \frac{d^3}{dx^3}V \right|_{x \: = \: x_{eq}}  = 0$, es necesario continar con orden 4 en la derivación, comprobar criterios y, de ser necesario, repetir los pasos en derivaciones superiores.
 			\end{itemize}
 		\end{itemize}
 	\end{definition}
@@ -575,7 +592,7 @@
 
 	\begin{marginfigure}
 		\begin{figure}[H]
-			\includegraphics[width=7cm]{sismangular1.pdf}
+			\includegraphics[width=5.8cm]{sismangular1.pdf}
 			\caption{Posición de la partícula $\alpha$ y el centro de masa de un sistema respecto a $\mathcal{O}$}
 			\label{fig: sismangular1}
 		\end{figure}
@@ -594,7 +611,7 @@
 
 	\begin{marginfigure}
 		\begin{figure}[H]
-			\includegraphics[width=7cm]{sismangular2.pdf}
+			\includegraphics[width=5.8cm]{sismangular2.pdf}
 			\caption{Interacción y posiciones de las partículas $\alpha$ y $\beta$ de un sistema respecto a $\mathcal{O}$ }
 			\label{fig: sismangular2}
 		\end{figure}
